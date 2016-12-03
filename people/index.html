@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<h1 class="page-name">People</h1>
+
+<div class="posts">
+  {% for person in site.people %}
+    <article class="post">
+
+	  <img class="portrait" src="{{ person.portrait }}"/>
+      <h1><a href="{{ site.baseurl }}{{ person.url }}">{{ person.name }}</a></h1>
+
+      <div class="entry">
+        {{ person.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ person.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>

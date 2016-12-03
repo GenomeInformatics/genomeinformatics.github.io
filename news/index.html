@@ -1,0 +1,37 @@
+---
+layout: default
+paginate: 1
+paginate_path: "/news/page:num/"
+
+---
+
+<h1 class="page-name">News</h1>
+
+{% include page-nav.html %}
+
+<div class="posts">
+  {% for post in paginator.posts %}
+    <article class="post">
+
+      <h2>{{ post.title }}</h2>
+
+	  <div class="subheading">
+	  	{{ post.date | date: "%B %e, %Y" }}
+	  </div>
+	  
+      <div>
+      {% if post.excerpt.size != post.content.size and post != site.posts.first %}
+      	<p>
+			{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+			<a href="{{ site.baseurl }}{{ post.url }}"> [ entire post ]</a>
+        </p>
+		{% else %}
+		{{ post.content }}
+	  	<a href="{{ site.baseurl }}{{ post.url }}"> [ link ]</a>
+	  {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+{% include page-nav.html %}

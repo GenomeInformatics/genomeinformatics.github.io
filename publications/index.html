@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<h1 class="page-name">Publications</h1>
+<div class="posts">
+  {% for post in site.publications reversed %}
+    <article class="post">
+
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.authors }}</p>
+      {{ post.date | date: "%B %e, %Y" }}<br>
+      <a href="{{ post.text }}">Full text</a>
+    </article>
+  {% endfor %}
+</div>

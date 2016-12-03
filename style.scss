@@ -15,12 +15,13 @@
 
 html {
   font-size: 100%;
+  overflow-y: scroll;
 }
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  font: 16px/1.4 $helvetica;
+  color: gray;//$darkGray;
 }
 
 .container {
@@ -30,12 +31,18 @@ body {
   width: 100%;
 }
 
+.icons {
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 0px;
+  width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
   color: $darkerGray;
-  font-weight: bold;
 
-  line-height: 1.7;
+//  line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
 
@@ -46,21 +53,40 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 30px;
+  margin: 0;
   a {
     color: inherit;
   }
 }
 
-h2 {
-  font-size: 24px;
+.page-name {
+	text-align: right;
+	display: block;
+	margin: 0px;
 }
 
+h2 {
+  font-size: 24px;
+	line-height: 1;
+	padding: 0px;
+	margin: 25px 0px 5px 0px;
+}
+
+.section
+{
+//	font-size: 24px;
+}
+  
+.subheading {
+	margin: 0px 0px 15px 0px;
+	border-bottom: 1px solid lightGray;
+}
 h3 {
   font-size: 20px;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 16px;
   color: $gray;
 }
 
@@ -69,16 +95,16 @@ p {
 }
 
 a {
-  color: $blue;
+  color: tomato;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: gray;//$blue;
   }
 }
 
 ul, ol {
-  margin: 15px 0;
+  margin: 1px 0;
   padding-left: 30px;
 }
 
@@ -151,23 +177,45 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
+  background-color: tomato;
+  border-bottom: 1px solid $lightGray;
 }
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+
+  a {
+    &:hover, &:active {
+      color: $yellow;//$blue;
+    }
+  }
 
   @include mobile {
     text-align: center;
   }
 }
 
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.pane {
+ background-color: #EEEEEE;
+ padding: 15px;
+ border-radius: 6px;
+}
 .site-avatar {
+  background-color: white;
   float: left;
   width: 70px;
   height: 70px;
   margin-right: 15px;
+//  margin-left: 15px;
+  padding: 5px;
 
   @include mobile {
     float: none;
@@ -175,9 +223,26 @@ img {
     margin: 0 auto;
   }
 
-  img {
-    border-radius: 5px;
+  border-radius: 10px;
+//  border: 1px solid gray;
+}
+
+.logo {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding: 5px;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
   }
+
+  border-radius: 10px;
+//  border: 1px solid gray;
 }
 
 .site-info {
@@ -192,19 +257,23 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: white;//$darkGray;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
+  a {
+    &:hover, &:active {
+      color: $yellow;//$blue;
+    }
+  }
 }
 
 .site-description {
-  margin: -5px 0 0 0;
-  color: $gray;
+  color: #ffc3b3;//$gray;f
   font-size: 16px;
-
+  
   @include mobile {
     margin: 3px 0;
   }
@@ -212,7 +281,8 @@ img {
 
 nav {
   float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  margin-top: 3px; // @TODO: Vertically middle align
+//  margin-right: 15px;
   font-family: $helveticaNeue;
   font-size: 18px;
 
@@ -225,11 +295,15 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: white; //$darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
+    &:hover, &:active {
+      color: $yellow;//$blue;
+    }
+    
     @include mobile {
       margin: 0 10px;
       color: $blue;
@@ -243,7 +317,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+//  border-bottom: 1px solid $lightGray;
 }
 
 .posts > .post:last-child {
@@ -257,7 +331,7 @@ nav {
     border-left: 2px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
-    font-size: 22px;
+    font-size: 12px;
     font-style: italic;
   }
 
@@ -266,21 +340,22 @@ nav {
   }
 
   .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
 .wrapper-footer {
   margin-top: 50px;
+  margin-bottom: 20px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
 }
 
 footer {
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
+//  border-radius: 15px;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

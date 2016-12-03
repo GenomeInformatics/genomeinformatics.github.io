@@ -23,12 +23,18 @@
 
           <div class="site-info">
             <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
+            <a href="{{ site.baseurl }}/" class="site-description">{{ site.description }}</a>
           </div>
 
+        <div style="text-align: right;">
+          <div style="transform: scale(0.75, 0.75);">
+          {% include svg-icons.html %}
+          </div>
+        </div>
           <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
+            <a href="{{ site.baseurl }}/news">News</a>
+            <a href="{{ site.baseurl }}/projects">Software</a>
+            <a href="{{ site.baseurl }}/publications">Publications</a>
           </nav>
         </header>
       </div>
@@ -41,7 +47,6 @@
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
-          {% include svg-icons.html %}
         </footer>
       </div>
     </div>
