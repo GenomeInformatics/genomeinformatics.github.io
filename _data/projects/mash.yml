@@ -1,0 +1,5 @@
+name: Canu
+docs: http://mash.readthedocs.io/en/latest/
+source: https://github.com/marbl/mash
+desc:
+ Fast genome and metagenome distance estimation using MinHash

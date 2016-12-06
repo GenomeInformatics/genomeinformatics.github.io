@@ -11,17 +11,15 @@ description: Maryland Bioinformatics Labs
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /img/marbl.png
 
+# used in blog posts to denote the end of the excerpt used for lists
+excerpt_separator: "<excerpt>"
+
 paginate: 2
 paginate_path: "/news/page:num/"
-
-excerpt_separator: "<excerpt>"
 
 collections:
   projects:
     output: true
-  people:
-    output: true
-  publications:
 
 #
 # Flags below are optional

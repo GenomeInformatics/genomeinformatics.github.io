@@ -5,16 +5,25 @@ layout: default
 <h1 class="page-name">Software</h1>
 
 <div class="posts">
-  {% for post in site.projects %}
+  {% for hash in site.data.projects %}
+  {% assign proj = hash[1] %}
     <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <h2>{{ proj.name }}</h2>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+        <div class="entry">
+        {{ proj.desc }}
+        </div>
+        
+        {% if proj.pubs %}
+            <h3 class="container">Publications:</h3>
+            <ul>
+            {% for pub in proj.pubs %}
+                <li>{{ site.data.publications[pub].title }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
 </div>

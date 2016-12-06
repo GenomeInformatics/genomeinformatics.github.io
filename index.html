@@ -5,17 +5,18 @@ permalink: /
 ---
 
 <div class="center">
-	<h1>Maryland Bioinformatics Labs</h1>
+	<h1 class="title"><span class="accent">Mar</span>yland <span class="accent">B</span>ioinformatics <span class="accent">L</span>abs</h1>
 	<div style="margin: 10px 0px 10px 0px;">
 	<a href="https://www.genome.gov"><img class="logo" src="/img/nhgri.png"/></a>
 	<a href="http://www.cbcb.umd.edu"><img class="logo" src="/img/umd.png"/></a>
-	<a href="https://bnbi.org"><img class="logo" src="/img/nbacc.png"/></a>
+	<a href="http://bnbi.org"><img class="logo" src="/img/nbacc.png"/></a>
 	<a href="https://ccb.jhu.edu"><img class="logo" src="/img/jhu.png"/></a>
 	</div>
 </div>
 <div style="text-align: center;">
 MarBL is a partnership of bioinformatics researchers and developers across several
-Maryland institutions, providing a common forum for collaboration and distribution.<br/><br/>
+Maryland institutions, providing a common forum for collaboration and software
+distribution.<br/><br/>
 </div>
 
 {% if site.posts %}
@@ -24,10 +25,10 @@ Maryland institutions, providing a common forum for collaboration and distributi
 <h2 class="section">News</h2>
 <div class="subheading">{% include item-count.html items=count %}</div>
 <div class="container">
-      <h3>{{ post.title }}</h3>
+      <h3 class="mainHeading">{{ post.title }}</h3>
 
-	  	{{ post.date | date: "%B %e, %Y" }}
-      <div class="entry">
+	  <div>{{ post.date | date: "%B %e, %Y" }}</div>
+      <div class="container">
       {% if post.excerpt.size != post.content.size %}
       	<p>
 			{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
@@ -42,9 +43,10 @@ Maryland institutions, providing a common forum for collaboration and distributi
 </div>
 {% endif %}
 
-{% if site.projects %}
-  {% assign proj = site.projects.last %}
-  {% assign count = site.projects.size %}
+{% if site.data.projects %}
+  {% assign hash = site.data.projects.first %}
+  {% assign proj = hash[1] %}
+  {% assign count = site.data.projects.size %}
 <h2 class="section">Software</h2>
 <div class="subheading">{% include item-count.html items=count %}</div>
 <div class="container">
@@ -55,9 +57,10 @@ Maryland institutions, providing a common forum for collaboration and distributi
 </div>
 {% endif %}
 
-{% if site.publications %}
-  {% assign pub = site.publications.last %}
-  {% assign count = site.publications.size %}
+{% for hash in site.data.publications %}
+{% if forloop.last %}
+  {% assign pub = hash[1] %}
+  {% assign count = site.data.publications.size %}
 <h2 class="section">Publications</h2>
 <div class="subheading">{% include item-count.html items=count %}</div>
 <div class="container">
@@ -71,4 +74,5 @@ Maryland institutions, providing a common forum for collaboration and distributi
 	{% include see-all.html name="publications" link="publications" count=count %}
 </div>
 {% endif %}
+{% endfor %}
 

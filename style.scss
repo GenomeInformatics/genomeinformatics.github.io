@@ -21,7 +21,7 @@ html {
 body {
 	background: $white;
   font: 16px/1.4 $helvetica;
-  color: gray;//$darkGray;
+  color: black;//$darkGray;
 }
 
 .container {
@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 30px;
   margin: 0;
+  color: gray;
   a {
     color: inherit;
   }
@@ -78,6 +79,7 @@ h2 {
 }
   
 .subheading {
+    color: gray;
 	margin: 0px 0px 15px 0px;
 	border-bottom: 1px solid lightGray;
 }
@@ -85,6 +87,9 @@ h3 {
   font-size: 20px;
 }
 
+  .mainHeading {
+    margin-bottom: 0;
+  }
 h4 {
   font-size: 16px;
   color: $gray;
@@ -154,6 +159,21 @@ img {
 ::selection {
   color: $black;
   background: $lightGray;
+}
+
+.title
+{
+    color: gray;
+//    border-bottom: 1px solid lightGray;
+}
+
+.accent
+{
+    color: tomato;
+//    text-decoration: underline;
+//   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+//   -webkit-text-stroke-width: 1px;
+//   -webkit-text-stroke-color: black;
 }
 
 // Nicolas Gallagher's micro clearfix hack

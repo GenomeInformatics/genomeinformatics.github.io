@@ -1,9 +1,6 @@
----
-layout: post
+name: Canu
 docs: http://canu.readthedocs.io/en/latest/
 source: https://github.com/marbl/canu
 desc:
  Canu is a fork of the Celera Assembler designed for high-noise single-molecule
  sequencing (such as the PacBio RSII or Oxford Nanopore MinION).
----
-
