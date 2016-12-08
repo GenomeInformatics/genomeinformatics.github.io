@@ -5,25 +5,26 @@ layout: default
 <h1 class="page-name">Software</h1>
 
 <div class="posts">
-  {% for hash in site.data.projects %}
-  {% assign proj = hash[1] %}
+{% assign sorted = site.projects | sort: 'name' %}
+  {% for proj in sorted %}
     <article class="post">
 
-        <h2>{{ proj.name }}</h2>
+			<div style="float:right;">
+				{% include person-list-start.html %}
+				{% for person in site.people %}
+					{% assign key = person.title | downcase %}
+					{% if proj.people contains key %}
+						{% include person-list-item.html index=forloop.index size=32 inits="yes" %}
+					{% endif %}
+				{% endfor %}
+				{% include person-list-end.html %}
+			</div>
+        <h2 style="font-family: courier;">{{ proj.name }}</h2>
 
-        <div class="entry">
-        {{ proj.desc }}
+        <div class="postBody">
+	        {{ proj.desc }}<br/>
+	        {% include project-links.html index=forloop.index %}
         </div>
-        
-        {% if proj.pubs %}
-            <h3 class="container">Publications:</h3>
-            <ul>
-            {% for pub in proj.pubs %}
-                <li>{{ site.data.publications[pub].title }}</li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
 </div>

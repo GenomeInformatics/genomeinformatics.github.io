@@ -2,6 +2,9 @@
 layout: default
 #title: About
 permalink: /
+
+# how many projects to show
+maxProjects: 1
 ---
 
 <div class="center">
@@ -16,63 +19,98 @@ permalink: /
 <div style="text-align: center;">
 MarBL is a partnership of bioinformatics researchers and developers across several
 Maryland institutions, providing a common forum for collaboration and software
-distribution.<br/><br/>
+distribution.
 </div>
 
+{% if site.people %}
+{% assign count = site.people.size %}
+<div class="section">
+{% include title-bar.html title="People" %}
+<div class="see-all"><a href="{{ site.baseurl }}/people">see all {{ count }} people</a></div>
+<div style="text-align: center;">
+	{% include person-list-start.html %}
+	{% for person in site.people limit:10 %}
+		{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
+    {% endfor %}
+    {% include person-list-end.html %}
+</div>
+</div>
+{% endif %}
+
 {% if site.posts %}
-  {% assign post = site.posts.first %}
-  {% assign count = site.posts.size %}
-<h2 class="section">News</h2>
-<div class="subheading">{% include item-count.html items=count %}</div>
-<div class="container">
+{% assign post = site.posts.first %}
+{% assign count = site.posts.size %}
+<div class="section">
+{% include title-bar.html title="News" %}
+{% include see-all.html name="news posts" link="news" count=count %}
+{% for post in site.posts limit:site.data.settings.landing-news-posts %}
+<div class="post">
       <h3 class="mainHeading">{{ post.title }}</h3>
 
-	  <div>{{ post.date | date: "%B %e, %Y" }}</div>
-      <div class="container">
+	  <div style="color: gray;">{{ post.date | date: "%B %e, %Y" }}</div>
+      <div class="postBody excerpt">
       {% if post.excerpt.size != post.content.size %}
-      	<p>
-			{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
-			<a href="{{ site.baseurl }}{{ post.url }}"> [ entire post ]</a>
-        </p>
+			{{ post.excerpt }}
+			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
 		{% else %}
 		{{ post.content }}
+		<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link.html %}</a>
 	  {% endif %}
       </div>
 
-	{% include see-all.html name="news posts" link="news" count=count %}
 </div>
-{% endif %}
-
-{% if site.data.projects %}
-  {% assign hash = site.data.projects.first %}
-  {% assign proj = hash[1] %}
-  {% assign count = site.data.projects.size %}
-<h2 class="section">Software</h2>
-<div class="subheading">{% include item-count.html items=count %}</div>
-<div class="container">
-      <h3><a href="{{ site.baseurl }}{{ proj.url }}">{{ proj.title }}</a></h3>
-      {{ proj.desc }}
-
-	{% include see-all.html name="projects" link="projects" count=count %}
-</div>
-{% endif %}
-
-{% for hash in site.data.publications %}
-{% if forloop.last %}
-  {% assign pub = hash[1] %}
-  {% assign count = site.data.publications.size %}
-<h2 class="section">Publications</h2>
-<div class="subheading">{% include item-count.html items=count %}</div>
-<div class="container">
-    <article class="post">
-      <h3>{{ pub.title }}</h3>
-      <p>{{ pub.authors }}</p>
-      {{ pub.date | date: "%B %e, %Y" }}<br>
-      <a href="{{ post.text }}">Full text</a>
-    </article>
-
-	{% include see-all.html name="publications" link="publications" count=count %}
-</div>
-{% endif %}
 {% endfor %}
+</div>
+{% endif %}
+
+{% if site.projects %}
+{% assign count = site.projects.size %}
+<div class="section">
+{% include title-bar.html title="Software" %}
+{% include see-all.html name="projects" link="projects" count=count %}
+	{% for proj in site.projects %}
+		<div class=post>
+			{% assign key = proj.title | downcase %}
+			{% if site.data.settings.landing-software contains key %}
+			<h3 class="mainHeading" style="font-family: courier;">{{ proj.title }}</h3>
+			<div class="postBody">
+				{{ proj.desc }}<br/>
+		        {% include project-links.html index=forloop.index %}
+	        </div>
+		{% endif %}
+		</div>
+    {% endfor %}
+
+	{% if count > page.maxProjects %}
+		<p>
+		</p>
+	{% endif %}
+</div>
+{% endif %}
+
+{% if site.data.publications %}
+{% assign array = "" | split: "" %}
+{% for pair in site.data.publications %}
+	{% assign array = array | push: pair[1] %}
+{% endfor %}
+{% assign sorted = array | sort: "date" %}
+{% assign pub = sorted.last %}
+{% assign count = site.data.publications.size %}
+<div class="section">
+{% include title-bar.html title="Publications" %}
+{% include see-all.html name="publications" link="publications" count=count %}
+<article class="post">
+	<h3 class="mainHeading" style="font-style: italic;">{{ pub.title }}</h3>
+	<div style="color: gray;">{{ pub.journal }}, {{ pub.date | date: "%B %e, %Y" }}</div>
+	<div class="postBody">
+		{% assign nbsp = pub.authors | replace: " ", "&nbsp;" %}
+		{{ nbsp | replace: ",&nbsp;", " " }}<br/>
+		<ul class=link-list>
+			<li><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{ pub.pubmed }}">PubMed</a></li>
+			<li><a href="{{ pub.text }}">Full text</a></li>
+		</ul>
+	</div>
+</article>
+</div>
+{% endif %}
 

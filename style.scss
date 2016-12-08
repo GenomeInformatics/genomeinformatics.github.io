@@ -75,9 +75,29 @@ h2 {
 
 .section
 {
-//	font-size: 24px;
+	margin-top: 36px;
+	margin-bottom: 0;
 }
-  
+
+.sectionTitle {
+	text-align: center;
+	color: gray;
+	line-height: 1;
+//	border-top: 1px solid lightGray;
+	font-size: 30px;
+    vertical-align: middle;
+}
+
+.see-all {
+	margin: 0px 0px 10px 0px;
+	text-align: center;
+  a:before {
+    content: "[\00a0";
+   }
+   a:after {
+   content: "\00a0]";
+  }
+}
 .subheading {
     color: gray;
 	margin: 0px 0px 15px 0px;
@@ -87,9 +107,10 @@ h3 {
   font-size: 20px;
 }
 
-  .mainHeading {
-    margin-bottom: 0;
-  }
+.mainHeading {
+	margin-bottom: 0;
+}
+
 h4 {
   font-size: 16px;
   color: $gray;
@@ -139,6 +160,44 @@ strong, b {
 
 img {
   max-width: 100%;
+  
+}
+
+.portrait {
+	border-radius: 12px;
+	width: 256px;
+	height: 256px;
+	background-size:cover;
+	background-position: center;
+//	object-fit: contain;
+}
+
+.portrait-list {
+	border-radius: 12px;
+	width: 128px;
+	height: 128px;
+	background-size:cover;
+	background-position: center;
+	float: left;
+	clear: left;
+	overflow: auto;
+	margin-bottom: 10px;
+//	object-fit: contain;
+}
+
+.portrait-thumbnail {
+	background-size:cover;
+	background-position: center;
+//	object-fit: contain;
+}
+
+.person-listing {
+	clear: left;
+}
+
+.monogram {
+	text-align: center;
+	color: gray;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -336,7 +395,7 @@ nav {
 //
 
 .posts > .post {
-  padding-bottom: 2em;
+//  padding-bottom: 2em;
 //  border-bottom: 1px solid $lightGray;
 }
 
@@ -362,6 +421,35 @@ nav {
   .read-more {
     font-size: 16px;
   }
+}
+
+ul.link-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.link-list {
+	li {
+		display: inline;
+	}
+	
+	li + li:before {
+		color: gray;
+    	content: " | ";
+	}
+}
+
+.postBody {
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 1px solid lightGray;
+}
+
+.excerpt {
+	p {
+		margin: 0;
+	}
 }
 
 .wrapper-footer {

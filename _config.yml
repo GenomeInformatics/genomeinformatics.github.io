@@ -20,6 +20,27 @@ paginate_path: "/news/page:num/"
 collections:
   projects:
     output: true
+  people:
+    output: true
+  institutes:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: post
+  -
+    scope:
+      path: "_projects"
+    values:
+      layout: project
+  -
+    scope:
+      path: "_people"
+    values:
+      layout: person
 
 #
 # Flags below are optional

@@ -1,0 +1,7 @@
+landing-news-posts: 1
+
+landing-software:
+ - mash
+ - canu
+
+news-post-excerpt-delim: "<excerpt>"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Introducing MarBL
 #excerpt: Like DNA, coffee is best when forced through nanopores.
 ---

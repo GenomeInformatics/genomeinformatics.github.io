@@ -5,17 +5,19 @@ layout: default
 <h1 class="page-name">People</h1>
 
 <div class="posts">
-  {% for person in site.people %}
-    <article class="post">
+	{% for person in site.people %}
+    <div class="person-listing">
 
-	  <img class="portrait" src="{{ person.portrait }}"/>
-      <h1><a href="{{ site.baseurl }}{{ person.url }}">{{ person.name }}</a></h1>
+		<div class="portrait-list" style="background-image:url({{ person.portrait }});"></div>
+		<div class="post" style="margin-left: 10px; float: left;">
+			<h2>{{ person.name }}</h2>
+		
+			<div class="entry">
+				{{ person.excerpt }}
+			</div>
 
-      <div class="entry">
-        {{ person.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ person.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+			<a href="{{ site.baseurl }}{{ person.url }}">full bio</a>
+		</div>
+	</div>
+	{% endfor %}
 </div>

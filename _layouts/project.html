@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="post">
+  <h2 class="page-name">{{ page.title }}</h2>
+	<div>{{ page.desc }}</div>
+  <div class="entry">
+    {{ desc }}
+  </div>
+  <br/>
+        {% if page.pubs %}
+            {% for pubName in page.pubs %}
+            	{% assign pub = site.data.publications[pubName] %}
+				<article class="post">
+					<h3 class="mainHeading" style="font-style: italic;">{{ pub.title }}</h3>
+					<div style="color: gray;">{{ pub.journal }}, {{ pub.date | date: "%B %e, %Y" }}</div>
+					<div class="postBody">
+						{% assign nbsp = pub.authors | replace: " ", "&nbsp;" %}
+						{{ nbsp | replace: ",&nbsp;", " " }}<br/>
+						<ul class=link-list>
+							<li><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{ pub.pubmed }}">PubMed</a></li>
+							<li><a href="{{ pub.text }}">Full text</a></li>
+						</ul>
+					</div>
+				</article>
+            {% endfor %}
+            </ul>
+        {% endif %}
+{{ content }}
+  {% include disqus.html %}
+</article>
