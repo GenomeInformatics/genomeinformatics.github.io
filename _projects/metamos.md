@@ -1,5 +1,5 @@
 ---
-name: MetAMOS
+name: metAMOS
 home: http://marbl.github.io/metAMOS/
 docs: http://metamos.readthedocs.io/en/v1.5rc3/
 source: https://github.com/marbl/metAMOS
@@ -15,4 +15,5 @@ people:
  - koren
  - sommer
  - pop
+ - phillippy
 ---
