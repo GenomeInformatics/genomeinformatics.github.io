@@ -1,3 +1,21 @@
+Building locally
+----------------
+
+Install the jekyll Ruby module(s):
+
+ [ >export GEM_HOME=~/.gem # if you don't have admin rights ]
+   >gem install jekyll
+   >gem install jekyll-paginate # for multipage blog listings
+
+Run jekyll in 'watch' mode to update as you save:
+
+   jekyll serve --watch &
+
+View the locally served page at:
+
+  http://127.0.0.1:4000
+
+
 Overall site config
 -------------------
 
