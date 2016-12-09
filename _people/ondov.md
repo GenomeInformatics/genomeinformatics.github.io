@@ -1,7 +1,8 @@
 ---
 name: Brian Ondov
-role: Bioinformatics Scientist (contractor)
-institute: nih
+role: Bioinformatics Scientist
+institutes:
+ - nih
 portrait: /img/ondov.jpeg
 bio:
  Brian Ondov studied Computer Science at RPI and Bioinformatics at Georgia Tech.

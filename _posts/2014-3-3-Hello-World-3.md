@@ -1,6 +1,7 @@
 ---
 title: Introducing MarBL
 #excerpt: Like DNA, coffee is best when forced through nanopores.
+authors: koren
 ---
 
 Like DNA, coffee is best when forced through nanopores.<excerpt> That's why we have
