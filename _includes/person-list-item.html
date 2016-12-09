@@ -1,7 +1,11 @@
+{% assign radius=include.size %}
 {% assign person = site.people[include.index] %}
+{% if include.radius %}
+	{% assign radius = include.radius %}
+{% endif %}
 <li class="monogram" style="display: inline-block; margin: 0;">
 	<a href="{{ site.baseurl }}{{ person.url }}">
-	<div class="portrait-thumbnail" style="width: {{ include.size }}px; height: {{ include.size }}px; border-radius: {{ include.size }}px; background-image:url({{ person.portrait }});"></div>
+	<div class="portrait-thumbnail" style="width: {{ include.size }}px; height: {{ include.size }}px; border-radius: {{ radius }}px; background-image:url({{ person.portrait }});"></div>
 	<!--<div style="width: 48px; height: 48px;"><img class="portrait-thumbnail" src="{{ person.portrait }}"/></div>-->
 	{% if include.inits == 'yes' %}
 		{% assign inits = person.name | split: " " %}
