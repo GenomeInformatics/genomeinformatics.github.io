@@ -7,9 +7,11 @@
 	<a href="{{ site.baseurl }}{{ person.url }}">
 	<div class="portrait-thumbnail" style="width: {{ include.size }}px; height: {{ include.size }}px; border-radius: {{ radius }}px; background-image:url({{ person.portrait }});"></div>
 	<!--<div style="width: 48px; height: 48px;"><img class="portrait-thumbnail" src="{{ person.portrait }}"/></div>-->
+	<div style="margin-top: 2px">
 	{% if include.inits == 'yes' %}
 		{% assign inits = person.name | split: " " %}
 		{% for init in inits %}{{ init | slice: 0 | upcase }}{% endfor %}
 	{% endif %}
+	</div>
 	</a>
 </li>

@@ -2,5 +2,26 @@
 layout: default
 ---
 
-<h1 class="page-name">{{ page.name }}</h1>
-<img class="portrait" src="{{ page.portrait }}"/>
+<h1 class="page-name">{% include person-name.html name=page.name phd=page.phd %}</h1>
+<div style="text-align: center; margin-top: 15px;">
+	<img class="portrait" src="{{ page.portrait }}"/>
+</div>
+<p>
+	{{ page.bio }}
+</p>
+{% if site.projects %}
+{% assign key = page.title | downcase %}
+<div class="section">
+	{% for proj in site.projects %}
+		<div class=post>
+			{% if proj.people contains key %}
+			<h3 class="mainHeading" style="font-family: courier;">{{ proj.name }}</h3>
+			<div class="postBody">
+				{{ proj.desc }}<br/>
+		        {% include project-links.html index=forloop.index %}
+	        </div>
+		{% endif %}
+		</div>
+    {% endfor %}
+</div>
+{% endif %}

@@ -8,15 +8,40 @@ layout: default
 	{% for person in site.people %}
     <div class="person-listing">
 
-		<div class="portrait-list" style="background-image:url({{ person.portrait }});"></div>
-		<div class="post" style="margin-left: 10px; float: left;">
-			<h2>{{ person.name }}</h2>
-		
-			<div class="entry">
-				{{ person.excerpt }}
+		<a href="{{ site.baseurl }}{{ person.url }}">
+			<div class="portrait-list" style="background-image:url({{ person.portrait }});"></div>
+		</a>
+			<div style="float:right;">
+		{% for inst in site.institutes %}
+			{% assign key = inst.title | downcase %}
+			{% if person.institutes contains key %}
+				<a href="{{ inst.link }}"><img class="logo-small" src="{{ inst.logo }}"/></a>
+			{% endif %}
+		{% endfor %}
 			</div>
 
-			<a href="{{ site.baseurl }}{{ person.url }}">full bio</a>
+		<div class="post" style="margin-left: 10px; display: inline-block;vertical-align: top;">
+			<h2 style="margin-top: 0;">{% include person-name.html name=person.name phd=person.phd %}</h2>
+		
+			<div class="entry">
+				{{ person.role }}
+			</div>
+			
+			{% assign key = person.title | downcase %}
+			{% assign separator = '' %}
+			<div>
+				{% for proj in site.projects %}
+					{% if proj.people contains key %}
+						{% if separator == 'yes' %}
+							&middot;
+						{% endif %}
+						{% assign separator = 'yes' %}
+						<span style="font-family: courier;">{{ proj.name }}</span>
+					{% endif %}
+				{% endfor %}
+			</div>
+			
+			<a href="{{ site.baseurl }}{{ person.url }}">[ more ]</a>
 		</div>
 	</div>
 	{% endfor %}

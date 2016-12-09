@@ -169,28 +169,34 @@ img {
 	height: 256px;
 	background-size:cover;
 	background-position: center;
+	box-shadow: 0 2px 5px 0px gray;
 //	object-fit: contain;
 }
 
 .portrait-list {
 	border-radius: 12px;
-	width: 128px;
-	height: 128px;
+	width: 96px;
+	height: 96px;
 	background-size:cover;
 	background-position: center;
 	display: inline-block;
+	box-shadow: 0 2px 5px 0px gray;
+	margin-bottom: -5px;
 //	object-fit: contain;
 }
 
 .portrait-thumbnail {
 	background-size:cover;
 	background-position: center;
+	box-shadow: 0 2px 5px 0px gray;
 //	object-fit: contain;
 }
 
 .person-listing {
-	margin-bottom: 10px;
+	margin-top: 10px;
 	vertical-align: top;
+	border-top: 1px solid lightGray;
+	padding-top: 10px;
 }
 
 .monogram {
@@ -321,6 +327,11 @@ img {
 
   border-radius: 10px;
 //  border: 1px solid gray;
+}
+
+.logo-small {
+  width: 40px;
+  height: 40px;
 }
 
 .site-info {
