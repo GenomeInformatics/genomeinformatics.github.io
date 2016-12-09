@@ -14,7 +14,7 @@ layout: default
 				{% for person in site.people %}
 					{% assign key = person.title | downcase %}
 					{% if proj.people contains key %}
-						{% include person-list-item.html index=forloop.index size=32 inits="yes" %}
+						{% include person-list-item.html index=forloop.index size=32 radius=4 inits="yes" %}
 					{% endif %}
 				{% endfor %}
 				{% include person-list-end.html %}
