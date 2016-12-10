@@ -22,6 +22,7 @@ body {
 	background: $white;
   font: 16px/1.4 $helvetica;
   color: black;//$darkGray;
+    font-weight: 300;
 }
 
 .container {
@@ -64,6 +65,7 @@ h1 {
 	text-align: right;
 	display: block;
 	margin: 0px;
+    letter-spacing: 1px;
 }
 
 h2 {
@@ -86,6 +88,7 @@ h2 {
 //	border-top: 1px solid lightGray;
 	font-size: 30px;
     vertical-align: middle;
+    letter-spacing: 1px;
 }
 
 .see-all {
@@ -203,6 +206,7 @@ img {
 	vertical-align: top;
 	border-top: 1px solid lightGray;
 	padding-top: 10px;
+	width: 100%;
 }
 
 .monogram {
@@ -234,6 +238,7 @@ img {
 {
     color: gray;
 //    border-bottom: 1px solid lightGray;
+    letter-spacing: 1px;
 }
 
 .accent
@@ -318,12 +323,32 @@ img {
 }
 
 .logo {
-  background-color: white;
+//  background-color: white;
   width: 70px;
   height: 70px;
   margin-right: 15px;
   margin-left: 15px;
   padding: 5px;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  border-radius: 10px;
+//  border: 1px solid gray;
+}
+
+.logo-list {
+//  background-color: white;
+  width: 128px;
+  height: 128px;
+background-size:contain;
+background-repeat:no-repeat;
+background-position: center;
+  padding: 5px;
+	display: inline-block;
 
   @include mobile {
     float: none;
@@ -376,10 +401,12 @@ img {
 
 nav {
   float: right;
-  margin-top: 3px; // @TODO: Vertically middle align
+  vertical-align: middle;
+//  width: 50%;
+  margin-top: 7px; // @TODO: Vertically middle align
 //  margin-right: 15px;
   font-family: $helveticaNeue;
-  font-size: 18px;
+  font-size: 20px;
 
   @include mobile {
     float: none;
@@ -388,10 +415,26 @@ nav {
     font-size: 16px;
   }
 
+	div {
+	color: white;
+	  text-align: justify;
+	  height: 1.5em;
+  @include mobile {
+    text-align: center;
+    }
+	}
+	div:after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+	}
+	
   a {
-    margin-left: 20px;
+//    margin-left: 25px;
+  text-align: justify;
+  display: inline;
     color: white; //$darkGray;
-    text-align: right;
+//    text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 

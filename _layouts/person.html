@@ -8,10 +8,12 @@ layout: default
 	{% for inst in site.institutes %}
 		{% assign key = inst.title | downcase %}
 		{% if page.institutes contains key %}
-			<div style="text-align:center;margin-bottom: 10px;">
-				<a href="{{ inst.link }}">
-					<div><img class="logo-small" src="{{ inst.logo }}"/></div>
-					<div style="line-height: 1;">{{ inst.inits }}</div>
+			<div style="vertical-align: middle;text-align:center;margin-bottom: 10px;">
+				<a style="" href="{{ inst.link }}">
+				<div>
+					{{ inst.inits }}
+					<img  style="vertical-align: top;" class="logo-small" src="{{ inst.logo }}"/>
+				</div>
 				</a>
 			</div>
 		{% endif %}
