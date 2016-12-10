@@ -15,7 +15,7 @@ layout: default
 		{% for inst in site.institutes %}
 			{% assign key = inst.title | downcase %}
 			{% if person.institutes contains key %}
-				<a href="{{ inst.link }}"><img class="logo-small" src="{{ inst.logo }}"/></a>
+				<a href="{{ inst.link }}"><div class="logo-small" style="background-image:url({{ inst.logo }});"></div></a>
 			{% endif %}
 		{% endfor %}
 			</div>

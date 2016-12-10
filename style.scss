@@ -330,6 +330,11 @@ img {
   margin-left: 15px;
   padding: 5px;
 
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+	padding: 5px;
+	display: inline-block;
   @include mobile {
     float: none;
     display: block;
@@ -342,12 +347,12 @@ img {
 
 .logo-list {
 //  background-color: white;
-  width: 128px;
-  height: 128px;
-background-size:contain;
-background-repeat:no-repeat;
-background-position: center;
-  padding: 5px;
+	width: 120px;
+	height: 120px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+	padding: 5px;
 	display: inline-block;
 
   @include mobile {
@@ -361,8 +366,12 @@ background-position: center;
 }
 
 .logo-small {
-  width: 40px;
-  height: 40px;
+	width: 40px;
+	height: 40px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+	display: inline-block;
 }
 
 .site-info {

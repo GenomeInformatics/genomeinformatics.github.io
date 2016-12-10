@@ -10,10 +10,14 @@ maxProjects: 1
 <div class="center">
 	<h1 class="title"><span class="accent">Mar</span>yland <span class="accent">B</span>ioinformatics <span class="accent">L</span>abs</h1>
 	<div style="margin: 10px 0px 10px 0px;">
-	<a href="https://www.genome.gov"><img class="logo" src="/img/nhgri.png"/></a>
-	<a href="http://www.cbcb.umd.edu"><img class="logo" src="/img/umd.png"/></a>
-	<a href="http://bnbi.org"><img class="logo" src="/img/nbacc.png"/></a>
-	<a href="https://ccb.jhu.edu"><img class="logo" src="/img/jhu.png"/></a>
+	{% for inst in site.institutes %}
+			<a style="" href="{{ inst.link }}">
+			<div style="display:inline-block;">
+				<div class="logo" style="background-image:url({{ inst.logo }});"></div>
+				<div>{{ inst.inits }}</div>
+			</div>
+			</a>
+	{% endfor %}
 	</div>
 </div>
 <div style="text-align: center;">
@@ -21,21 +25,6 @@ MarBL is a partnership of bioinformatics researchers and developers across sever
 Maryland institutions, providing a common forum for collaboration and software
 distribution.
 </div>
-
-{% if site.people %}
-{% assign count = site.people.size %}
-<div class="section">
-{% include title-bar.html title="People" %}
-<div class="see-all"><a href="{{ site.baseurl }}/people">see all {{ count }} people</a></div>
-<div style="text-align: center;">
-	{% include person-list-start.html %}
-	{% for person in site.people limit:10 %}
-		{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
-    {% endfor %}
-    {% include person-list-end.html %}
-</div>
-</div>
-{% endif %}
 
 {% if site.posts %}
 {% assign post = site.posts.first %}
@@ -45,8 +34,17 @@ distribution.
 {% include see-all.html name="news posts" link="news" count=count %}
 {% for post in site.posts limit:site.data.settings.landing-news-posts %}
 <div class="post">
+      <div style="float:right;">
+		{% include person-list-start.html %}
+		{% for person in site.people %}
+			{% assign key = person.title | downcase %}
+			{% if post.authors contains key %}
+				{% include person-list-item.html index=forloop.index size=32 %}
+			{% endif %}
+		{% endfor %}
+		{% include person-list-end.html %}
+	  </div>
       <h3 class="mainHeading">{{ post.title }}</h3>
-
 	  <div style="color: gray;">{{ post.date | date: "%B %e, %Y" }}</div>
       <div class="postBody excerpt">
       {% if post.excerpt.size != post.content.size %}
@@ -106,6 +104,21 @@ distribution.
 		</ul>
 	</div>
 </article>
+</div>
+{% endif %}
+
+{% if site.people %}
+{% assign count = site.people.size %}
+<div class="section">
+{% include title-bar.html title="People" %}
+<div class="see-all"><a href="{{ site.baseurl }}/people">see all {{ count }} people</a></div>
+<div style="text-align: center;">
+	{% include person-list-start.html %}
+	{% for person in site.people limit:10 %}
+		{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
+    {% endfor %}
+    {% include person-list-end.html %}
+</div>
 </div>
 {% endif %}
 
