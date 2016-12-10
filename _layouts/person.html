@@ -3,17 +3,34 @@ layout: default
 ---
 
 <h1 class="page-name">{% include person-name.html name=page.name phd=page.phd %}</h1>
+<h3 style="text-align: right; margin: 0 0 10px 0;">{{ page.role }}</h3>
+<div style="float:right;">
+	{% for inst in site.institutes %}
+		{% assign key = inst.title | downcase %}
+		{% if page.institutes contains key %}
+			<div style="text-align:center;margin-bottom: 10px;">
+				<a href="{{ inst.link }}">
+					<div><img class="logo-small" src="{{ inst.logo }}"/></div>
+					<div style="line-height: 1;">{{ inst.inits }}</div>
+				</a>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+<div style="display: inline; margin: 0;">
+	<div style="background-image:url({{ page.portrait }}); " class="portrait" src=""></div>
+</div>
 <div style="text-align: center; margin-top: 15px;">
-	<img class="portrait" src="{{ page.portrait }}"/>
 </div>
 <p>
 	{{ page.bio }}
 </p>
 {% if site.projects %}
+{% include title-bar.html title="Projects" %}
 {% assign key = page.title | downcase %}
-<div class="section">
+<div>
 	{% for proj in site.projects %}
-		<div class=post>
+		<div class="post">
 			{% if proj.people contains key %}
 			<h3 class="mainHeading" style="font-family: courier;">{{ proj.name }}</h3>
 			<div class="postBody">
