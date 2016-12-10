@@ -7,7 +7,8 @@ Install the jekyll Ruby module(s):
    >gem install jekyll
    >gem install jekyll-paginate # for multipage blog listings
 
-Run jekyll in 'watch' mode to update as you save:
+Run jekyll in 'watch' mode to update as you modify files (restart if _config.yml
+   changes):
 
    jekyll serve --watch &
 
