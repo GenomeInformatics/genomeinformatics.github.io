@@ -195,11 +195,14 @@ img {
 }
 
 .portrait-thumbnail {
+	display: inline-block;
 	background-size:cover;
 	background-position: center;
 	box-shadow: 0 2px 5px 0px gray;
 //	object-fit: contain;
 }
+
+a:hover {filter:grayscale(100%);} 
 
 .person-listing {
 	margin-top: 10px;
@@ -212,6 +215,7 @@ img {
 .monogram {
 	text-align: center;
 	color: gray;
+a:hover {filter:grayscale(100%);} 
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -394,10 +398,18 @@ img {
   letter-spacing: 1px;
   a {
     &:hover, &:active {
+    filter:none;
       color: $yellow;//$blue;
     }
   }
 }
+
+  a.site-description {
+    &:hover, &:active {
+    filter:none;
+      color: $yellow;//$blue;
+    }
+  }
 
 .site-description {
   color: #ffc3b3;//$gray;f
@@ -448,6 +460,7 @@ nav {
     letter-spacing: 1px;
 
     &:hover, &:active {
+    filter:none;
 //      color: $yellow;//$blue;
     }
     
