@@ -8,28 +8,28 @@ layout: default
 	{% for inst in site.institutes %}
     <div class="person-listing" style="display:table">
 
-		<div style="display:table-cell;width: 1%;">
-		<a href="{{ inst.link }}">
-			<div class="logo-list" style="background-image:url({{ inst.logo }});"></div>
-		</a>
-		</div>
-		<div class="post" style="padding-left: 10px; display: table-cell;vertical-align: top;">
+		<div class="post" style="display: table-cell;vertical-align: top;">
 			<h3 style="margin: 0;"><a href="{{ inst.link }}">{{ inst.inits }}</a></h3>
 		
 			<div style="color: gray;">
 				{{ inst.name }}
 			</div>
-		<div style="float:right;margin-top:10px;">
-		{% assign key = inst.title | downcase %}
-		{% include person-list-start.html %}
-		{% for person in site.people %}
-			{% if person.institutes contains key %}
-				{% include person-list-item.html index=forloop.index size=32 inits='yes' %}
-			{% endif %}
-		{% endfor %}
-		{% include person-list-end.html %}
+			<div style="margin-top:10px;">
+			{% assign key = inst.title | downcase %}
+			{% include person-list-start.html %}
+			{% for person in site.people %}
+				{% if person.institutes contains key %}
+					{% include person-list-item.html index=forloop.index size=40 inits='yes' %}
+				{% endif %}
+			{% endfor %}
+			{% include person-list-end.html %}
+			</div>
+		</div>		
+		<div style="display:table-cell;width: 1%;">
+		<a href="{{ inst.link }}">
+			<div class="logo-list" style="background-image:url({{ inst.logo }});"></div>
+		</a>
 		</div>
-			</div>		
 	</div>
 	{% endfor %}
 </div>

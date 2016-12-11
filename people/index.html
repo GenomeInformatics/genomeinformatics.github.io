@@ -11,7 +11,11 @@ layout: default
 		<a href="{{ site.baseurl }}{{ person.url }}">
 			<div class="portrait-list" style="background-image:url({{ person.portrait }});"></div>
 		</a>
-			<div style="float:right;">
+			<div style="color: gray;float:right;margin:0;">
+				{{ person.role }}
+			</div>
+			
+			<div style="float:right;clear:right;margin-top:0px;">
 		{% for inst in site.institutes %}
 			{% assign key = inst.title | downcase %}
 			{% if person.institutes contains key %}
@@ -23,13 +27,10 @@ layout: default
 		<div class="post" style="margin-left: 10px; display: inline-block;vertical-align: top;">
 			<h3 style="margin: 0;">{% include person-name.html name=person.name phd=person.phd %}</h3>
 		
-			<div style="color: gray;">
-				{{ person.role }}
-			</div>
-			
+			<a href="{{ site.baseurl }}{{ person.url }}">[ more ]</a>
 			{% assign key = person.title | downcase %}
 			{% assign separator = '' %}
-			<div>
+			<div style="margin-top: 25px;">
 				{% for proj in site.projects %}
 					{% if proj.people contains key %}
 						{% if separator == 'yes' %}
@@ -41,7 +42,6 @@ layout: default
 				{% endfor %}
 			</div>
 			
-			<a href="{{ site.baseurl }}{{ person.url }}">[ more ]</a>
 		</div>
 	</div>
 	{% endfor %}

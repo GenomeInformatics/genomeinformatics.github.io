@@ -39,7 +39,7 @@ distribution.
 		{% for person in site.people %}
 			{% assign key = person.title | downcase %}
 			{% if post.authors contains key %}
-				{% include person-list-item.html index=forloop.index size=32 %}
+				{% include person-list-item.html index=forloop.index size=40 %}
 			{% endif %}
 		{% endfor %}
 		{% include person-list-end.html %}
