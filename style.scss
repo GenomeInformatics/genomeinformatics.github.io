@@ -73,6 +73,7 @@ h2 {
 	line-height: 1;
 	padding: 0px;
 	margin: 25px 0px 5px 0px;
+    letter-spacing: 1px;
 }
 
 .section
@@ -183,15 +184,14 @@ img {
 }
 
 .portrait-list {
+	float:left;
 	border-radius: 12px;
 	width: 96px;
 	height: 96px;
 	background-size:cover;
 	background-position: center;
-	display: inline-block;
 	box-shadow: 0 2px 5px 0px gray;
 	margin-bottom: -5px;
-//	object-fit: contain;
 }
 
 .portrait-thumbnail {
