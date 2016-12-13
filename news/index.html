@@ -36,7 +36,7 @@ layout: default
 			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
 		{% else %}
 		{{ post.content }}
-		<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link.html %}</a>
+		<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link.html comments=post.comments %}</a>
 	  {% endif %}
       </div>
     </article>

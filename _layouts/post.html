@@ -4,11 +4,27 @@ layout: default
 
 <article class="post">
 <div style="float:right;">
+
+	<!-- count authors first -->
+	{% assign count = 0 %}
+	{% for person in site.people %}
+		{% assign key = person.title | downcase %}
+		{% if page.authors contains key %}
+			{% assign count = count | plus: 1 %}
+		{% endif %}
+	{% endfor %}
+	
 	{% include person-list-start.html %}
 	{% for person in site.people %}
 		{% assign key = person.title | downcase %}
 		{% if page.authors contains key %}
-			{% include person-list-item.html index=forloop.index size=40 inits="yes" %}
+			{% if count > 1 %}
+				<!-- multi-author; show inits -->
+				{% include person-list-item.html index=forloop.index size=40 inits="yes" %}
+			{% else %}
+				<!-- single author; show full name -->
+				{% include person-list-item.html index=forloop.index size=40 name="yes" %}
+			{% endif %}
 		{% endif %}
     {% endfor %}
     {% include person-list-end.html %}
@@ -21,5 +37,7 @@ layout: default
     {{ content }}
   </div>
 
-  {% include disqus.html %}
+  {% if page.comments %}
+	  {% include disqus.html %}
+  {% endif %}
 </article>
