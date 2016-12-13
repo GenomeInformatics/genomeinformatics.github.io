@@ -2,6 +2,10 @@
 
 <ul class="link-list">
 
+{% if proj.home %}
+	<li><a href="{{ proj.home }}">home</a></li>
+{% endif %}
+	
 {% if proj.download %}
 	<li><a href="{{ proj.download }}">download</a></li>
 {% endif %}

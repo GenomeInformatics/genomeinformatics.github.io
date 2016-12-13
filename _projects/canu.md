@@ -1,6 +1,6 @@
 ---
 name: Canu
-docs: http://canu.readthedocs.io/en/latest/
+home: http://canu.readthedocs.io/en/latest/
 download: https://github.com/marbl/canu/releases
 source: https://github.com/marbl/canu
 desc:
