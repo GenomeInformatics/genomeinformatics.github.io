@@ -30,9 +30,9 @@ layout: default
 	{{ page.bio }}
 </p>
 {% if site.projects %}
-{% include title-bar.html title="Projects" %}
 {% assign key = page.title | downcase %}
-<div>
+<div class="section">
+	{% include title-bar.html title="Projects" %}
 	{% for proj in site.projects %}
 		<div class="post">
 			{% if proj.people contains key %}
@@ -44,5 +44,27 @@ layout: default
 		{% endif %}
 		</div>
     {% endfor %}
+</div>
+{% endif %}
+
+<!-- count news posts -->
+{% assign key = page.title | downcase %}
+{% assign count = 0 %}
+{% for post in site.posts %}
+	{% if post.authors contains key %}
+		{% assign count = count | plus: 1 %}
+	{% endif %}
+{% endfor %}
+
+{% if count > 0 %}
+<div class="section">
+	{% include title-bar.html title="News&nbsp;posts" %}
+	<ul>
+	{% for post in site.posts %}
+		{% if post.authors contains key %}
+			<li><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span><h3></li>
+		{% endif %}
+	{% endfor %}
+	</ul>
 </div>
 {% endif %}
