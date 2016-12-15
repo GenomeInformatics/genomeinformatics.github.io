@@ -32,12 +32,18 @@ Editing/adding news posts
 
 File names should start with a date in the form YYYY-MM-DD. The format is
 Markdown, but files begin with "front matter" between two "---" lines, which
-is YAML formatted and used for metadata. Current front matter variables used:
+is YAML formatted and used for metadata. Current (optional) front matter
+variables used:
 
-  title: The title of the post
+  title: The title of the post (the file name without the leading date or any
+         dashes is used if missing)
+  authors: List of authors, keyed to file names in _people/, but without ".md"
+           (http://yaml.org/type/seq.html)
   excerpt: Optional short description to show in lists. If not provided,
     everything up to the excerpt delimiter (defined in _data/settings.yml) will
     be used, or the entire post if there is no delimiter.
+  comments: Currently true by default; set to false to disable
+            (http://yaml.org/type/bool.html)
 
 
 Editing/adding data
@@ -54,7 +60,9 @@ files for People and Projects are Markdown formatted, the data in their YAML
 front matter is used to generate their corresponding pages, and Markdown content
 below this is currently ignored. Publications are only used as a data source and
 do not have individual pages, hence the pure YAML format. See existing files for
-relevant variables.
+relevant variables and syntax or the complete schema:
+
+  schema.pptx
 
 Images can be placed in img/ and can be referenced from YAML as "/img/[...]",
 including any subdirectories.
