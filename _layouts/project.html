@@ -3,12 +3,7 @@ layout: default
 ---
 
 <article class="post">
-  <h1 class="page-name">{{ page.title }}</h1>
-	<div>{{ page.desc }}</div>
-  <div class="entry">
-    {{ desc }}
-  </div>
-  <br/>
+  <h1 class="page-name">{{ page.name }} publications</h1>
         {% if page.pubs %}
             {% for pubName in page.pubs %}
             	{% assign pub = site.data.publications[pubName] %}
