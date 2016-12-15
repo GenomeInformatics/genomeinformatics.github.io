@@ -61,23 +61,29 @@ distribution.
 </div>
 {% endif %}
 
-{% if site.projects %}
+{% if site.data.settings.landing-software %}
 {% assign count = site.projects.size %}
 <div class="section">
 {% include title-bar.html title="Software" %}
 {% include see-all.html name="projects" link="projects" count=count %}
+
+<!-- No hashes in Liquid so scan the whole list for each name to preserve order.
+Inefficient, but doesn't matter (yet). -->
+
+{% for query in site.data.settings.landing-software %}
 	{% for proj in site.projects %}
+		{% assign key = proj.title | downcase %}
+		{% if key == query %}
 		<div class=post>
-			{% assign key = proj.title | downcase %}
-			{% if site.data.settings.landing-software contains key %}
 			<h3 class="mainHeading" style="font-family: courier;">{{ proj.title }}</h3>
 			<div class="postBody">
 				{{ proj.desc }}<br/>
 		        {% include project-links.html index=forloop.index %}
 	        </div>
-		{% endif %}
 		</div>
+		{% endif %}
     {% endfor %}
+{% endfor %}
 </div>
 {% endif %}
 
