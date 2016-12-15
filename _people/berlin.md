@@ -1,7 +1,7 @@
 ---
 name: Konstantine Berlin
 role: Investigator
-phd: 
+phd: yes
 institutes: nbacc
 portrait: /img/berlin.jpg
 bio:
