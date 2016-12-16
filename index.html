@@ -8,22 +8,14 @@ maxProjects: 1
 ---
 
 <div class="center">
-	<h1 class="title"><span class="accent">Mar</span>yland <span class="accent">B</span>ioinformatics <span class="accent">L</span>abs</h1>
-	<div style="margin: 10px 0px 10px 0px;">
-	{% for inst in site.institutes %}
-			<a style="" href="{{ inst.link }}">
-			<div style="display:inline-block;">
-				<div class="logo" style="background-image:url({{ inst.logo }});"></div>
-				<div>{{ inst.inits }}</div>
-			</div>
-			</a>
-	{% endfor %}
-	</div>
+	<h1 class="title"><span class="accent">G</span>enome <span class="accent">I</span>nformatics <span class="accent">S</span>ection</h1>
 </div>
 <div style="text-align: center;">
-MarBL is a partnership of bioinformatics researchers and developers across several
-Maryland institutions, providing a common forum for collaboration and software
-distribution.
+	{% include parent-institute.html name="HHS" url="https://www.hhs.gov" logo="/img/hhs.png" %}
+	<span style="color:gray;">&gt;</span>
+	{% include parent-institute.html name="NIH" url="https://www.nih.gov" logo="/img/nih.png" %}
+	<span style="color:gray;">&gt;</span>
+	{% include parent-institute.html name="NHGRI" url="https://www.genome.gov" logo="/img/nhgri.png" %}
 </div>
 
 {% if site.posts %}
@@ -128,3 +120,18 @@ Inefficient, but doesn't matter (yet). -->
 </div>
 {% endif %}
 
+{% assign count = site.institutes.size %}
+<div class="section">
+{% include title-bar.html title="Partners" %}
+<div class="see-all"><a href="{{ site.baseurl }}/labs">see all {{ count }} partners</a></div>
+	<div class="center" style="margin: 10px 0px 10px 0px;">
+	{% for inst in site.institutes %}
+			<a style="" href="{{ inst.link }}">
+			<div style="display:inline-block;">
+				<div class="logo" style="background-image:url({{ inst.logo }});"></div>
+				<div>{{ inst.inits }}</div>
+			</div>
+			</a>
+	{% endfor %}
+	</div>
+</div>
