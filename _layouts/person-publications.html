@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<h1 class="page-name">{% include person-name.html name=page.name phd=page.phd %} publications</h1>
+<h3 style="text-align: right; margin: 0 0 10px 0;">{{ page.role }}</h3>
+<div style="float:right;">
+	{% for inst in site.institutes %}
+		{% assign key = inst.title | downcase %}
+		{% if page.institutes contains key %}
+			<div style="text-align:right;margin-bottom: 10px;">
+				<a style="" href="{{ inst.link }}">
+				<div>
+				<a href="{{ inst.link }}">
+					{{ inst.inits }}<br/>
+					<div class="logo-small" style="background-image:url({{ inst.logo }});"></div>
+				</a>
+				</div>
+				</a>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+<div style="display: inline; margin: 0;">
+	<div style="background-image:url({{ page.portrait }}); " class="portrait" src=""></div>
+</div>
+<div style="text-align: center; margin-top: 15px;">
+</div>
+
+<!-- count news posts -->
+{% assign key = page.title | downcase %}
+{% assign count = 0 %}
+{% for post in site.posts %}
+	{% if post.authors contains key %}
+		{% assign count = count | plus: 1 %}
+	{% endif %}
+{% endfor %}
+
+{% if count > 0 %}
+<div class="section">
+	{% include title-bar.html title="News&nbsp;posts" %}
+	<ul>
+	{% for post in site.posts %}
+		{% if post.authors contains key %}
+			<li><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span><h3></li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+</div>
+{% endif %}
