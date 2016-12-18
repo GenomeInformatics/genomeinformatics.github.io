@@ -43,7 +43,7 @@ layout: default
 <div class="section">
 	{% include title-bar.html title="Projects" %}
 	{% if array.size > site.data.settings.person-page-projects %}
-		<div class="see-all"><a href="{{ site.baseurl }}/person-projects/{{ page.title }}">see all {{ array.size }} projects for {{ page.name }}</a></div>
+		<div class="see-all"><a href="{{ site.baseurl }}/person-projects/{{ key }}">see all {{ array.size }} projects for {{ page.name }}</a></div>
 	{% endif %}
 	{% for proj in array limit: site.data.settings.person-page-projects %}
 		<div class="post">
@@ -70,7 +70,7 @@ layout: default
 <div class="section">
 	{% include title-bar.html title="News&nbsp;posts" %}
 	{% if array.size > site.data.settings.person-page-posts %}
-		<div class="see-all"><a href="{{ site.baseurl }}/person-posts/{{ page.title }}">see all {{ array.size }} posts by {{ page.name }}</a></div>
+		<div class="see-all"><a href="{{ site.baseurl }}/person-posts/{{ key }}">see all {{ array.size }} posts by {{ page.name }}</a></div>
 	{% endif %}
 	<ul>
 	{% for post in array limit: site.data.settings.person-page-posts %}
@@ -91,12 +91,14 @@ layout: default
 {% endfor %}
 
 {% if array.size > 0 %}
+<div class="section">
 {% include title-bar.html title="Publications" %}
 {% if array.size > site.data.settings.person-page-pubs %}
-	<div class="see-all"><a href="{{ site.baseurl }}/person-publications/{{ page.title }}">see all {{ array.size }} publications with {{ page.name }}</a></div>
+	<div class="see-all"><a href="{{ site.baseurl }}/person-publications/{{ key }}">see all {{ array.size }} publications with {{ page.name }}</a></div>
 {% endif %}
 {% assign sorted = array | sort: "date" %}
 {% for pub in sorted reversed limit: site.data.settings.person-page-pubs %}
 	{% include publication.html pub=pub %}
 {% endfor %}
+</div>
 {% endif %}
