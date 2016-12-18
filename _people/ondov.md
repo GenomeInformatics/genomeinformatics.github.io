@@ -1,5 +1,6 @@
 ---
 name: Brian Ondov
+pub-name: Ondov BD
 role: Bioinformatics Scientist
 institutes:
  - nih
