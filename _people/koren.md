@@ -1,5 +1,6 @@
 ---
 name: Sergey Koren
+pub-name: Koren S
 phd: yes
 role: Barista
 institutes:

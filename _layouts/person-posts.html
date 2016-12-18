@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1 class="page-name">Publications with {% include person-name.html name=page.name phd=page.phd %}</h1>
+<h1 class="page-name">News posts by {% include person-name.html name=page.name phd=page.phd %}</h1>
 <h3 style="text-align: right; margin: 0 0 10px 0;">{{ page.role }}</h3>
 <div style="float:right;">
 	{% for inst in site.institutes %}
@@ -28,19 +28,23 @@ layout: default
 	<div class="see-all"><a href="{{ site.baseurl }}/people/{{ page.title }}">see entire profile</a></div>
 </div>
 
-<!-- collect publications -->
-{% assign array = "" | split: "" %}
-{% for pair in site.data.publications %}
-	{% assign pub = pair[1] %}
-	{% assign authors = pub.authors | split: ", " %}
-	{% if authors contains page.pub-name %}
-		{% assign array = array | push: pair[1] %}
+<!-- count news posts -->
+{% assign key = page.title | downcase %}
+{% assign count = 0 %}
+{% for post in site.posts %}
+	{% if post.authors contains key %}
+		{% assign count = count | plus: 1 %}
 	{% endif %}
 {% endfor %}
 
-{% if array.size > 0 %}
-{% assign sorted = array | sort: "date" %}
-{% for pub in sorted reversed %}
-	{% include publication.html pub=pub %}
-{% endfor %}
+{% if count > 0 %}
+<div class="section">
+	<ul>
+	{% for post in site.posts %}
+		{% if post.authors contains key %}
+			<li><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span><h3></li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+</div>
 {% endif %}

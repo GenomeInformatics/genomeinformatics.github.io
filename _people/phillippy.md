@@ -1,5 +1,6 @@
 ---
 name: Adam Phillippy
+pub-name: Phillippy AM
 role: Investigator
 phd: yes
 institutes:

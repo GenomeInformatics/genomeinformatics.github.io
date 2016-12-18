@@ -24,6 +24,10 @@ collections:
     output: true
   person-publications:
     output: true
+  person-projects:
+    output: true
+  person-posts:
+    output: true
   institutes:
     output: false
 
@@ -49,6 +53,16 @@ defaults:
       path: "_person-publications"
     values:
       layout: person-publications
+  -
+    scope:
+      path: "_person-projects"
+    values:
+      layout: person-projects
+  -
+    scope:
+      path: "_person-posts"
+    values:
+      layout: person-posts
 
 #
 # Flags below are optional

@@ -29,42 +29,74 @@ layout: default
 <p>
 	{{ page.bio }}
 </p>
-{% if site.projects %}
+
+<!-- collect projects -->
 {% assign key = page.title | downcase %}
+{% assign array = "" | split: "" %}
+{% for proj in site.projects %}
+	{% if proj.people contains key %}
+		{% assign array = array | push: proj %}
+	{% endif %}
+{% endfor %}
+
+{% if array.size > 0 %}
 <div class="section">
 	{% include title-bar.html title="Projects" %}
-	{% for proj in site.projects %}
+	{% if array.size > site.data.settings.person-page-projects %}
+		<div class="see-all"><a href="{{ site.baseurl }}/person-projects/{{ page.title }}">see all {{ array.size }} projects for {{ page.name }}</a></div>
+	{% endif %}
+	{% for proj in array limit: site.data.settings.person-page-projects %}
 		<div class="post">
-			{% if proj.people contains key %}
 			<h3 class="mainHeading" style="font-family: courier;">{{ proj.name }}</h3>
 			<div class="postBody">
 				{{ proj.desc }}<br/>
 		        {% include project-links.html index=forloop.index %}
 	        </div>
-		{% endif %}
 		</div>
     {% endfor %}
 </div>
 {% endif %}
 
-<!-- count news posts -->
+<!-- collect news posts -->
 {% assign key = page.title | downcase %}
-{% assign count = 0 %}
+{% assign array = "" | split: "" %}
 {% for post in site.posts %}
 	{% if post.authors contains key %}
-		{% assign count = count | plus: 1 %}
+		{% assign array = array | push: post %}
 	{% endif %}
 {% endfor %}
 
-{% if count > 0 %}
+{% if array.size > 0 %}
 <div class="section">
 	{% include title-bar.html title="News&nbsp;posts" %}
+	{% if array.size > site.data.settings.person-page-posts %}
+		<div class="see-all"><a href="{{ site.baseurl }}/person-posts/{{ page.title }}">see all {{ array.size }} posts by {{ page.name }}</a></div>
+	{% endif %}
 	<ul>
-	{% for post in site.posts %}
-		{% if post.authors contains key %}
-			<li><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span><h3></li>
-		{% endif %}
+	{% for post in array limit: site.data.settings.person-page-posts %}
+		<li><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span><h3></li>
 	{% endfor %}
 	</ul>
 </div>
+{% endif %}
+
+<!-- collect publications -->
+{% assign array = "" | split: "" %}
+{% for pair in site.data.publications %}
+	{% assign pub = pair[1] %}
+	{% assign authors = pub.authors | split: ", " %}
+	{% if authors contains page.pub-name %}
+		{% assign array = array | push: pair[1] %}
+	{% endif %}
+{% endfor %}
+
+{% if array.size > 0 %}
+{% include title-bar.html title="Publications" %}
+{% if array.size > site.data.settings.person-page-pubs %}
+	<div class="see-all"><a href="{{ site.baseurl }}/person-publications/{{ page.title }}">see all {{ array.size }} publications with {{ page.name }}</a></div>
+{% endif %}
+{% assign sorted = array | sort: "date" %}
+{% for pub in sorted reversed limit: site.data.settings.person-page-pubs %}
+	{% include publication.html pub=pub %}
+{% endfor %}
 {% endif %}
