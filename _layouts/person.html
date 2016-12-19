@@ -25,6 +25,9 @@ layout: default
 	<div style="background-image:url({{ page.portrait }}); " class="portrait" src=""></div>
 </div>
 <div style="text-align: center; margin-top: 15px;">
+{% if page.email %}
+	{% include email.html email=page.email size=14 %}
+{% endif %}
 </div>
 <p>
 	{{ page.bio }}
