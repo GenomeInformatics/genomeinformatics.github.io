@@ -75,9 +75,9 @@ layout: default
 	{% if array.size > site.data.settings.person-page-posts %}
 		<div class="see-all"><a href="{{ site.baseurl }}/person-posts/{{ key }}">see all {{ array.size }} posts by {{ page.name }}</a></div>
 	{% endif %}
-	<ul>
+	<ul style="margin-top: 15px;">
 	{% for post in array limit: site.data.settings.person-page-posts %}
-		<li><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span><h3></li>
+		<li><h3 style="margin:0;"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span></h3></li>
 	{% endfor %}
 	</ul>
 </div>
