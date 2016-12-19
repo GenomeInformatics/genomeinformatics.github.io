@@ -18,7 +18,7 @@ maxProjects: 1
 	{% include parent-institute.html name="NHGRI" url="https://www.genome.gov" logo="/img/nhgri.png" %}
 </div>
 
-{% if site.posts %}
+{% if site.posts.size > 0 %}
 {% assign post = site.posts.first %}
 {% assign count = site.posts.size %}
 <div class="section">
