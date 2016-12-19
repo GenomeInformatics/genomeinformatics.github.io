@@ -1,7 +1,8 @@
 ---
 name: Brian Ondov
 pub-name: Ondov BD
-role: Bioinformatics Scientist
+role: Bioinformatics Engineer
+email: brian.ondov@nih.gov
 institutes:
  - nih
 portrait: /img/ondov.jpeg
