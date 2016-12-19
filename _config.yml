@@ -14,7 +14,7 @@ avatar: /img/marbl.png
 # used in blog posts to denote the end of the excerpt used for lists
 excerpt_separator: "<excerpt>"
 
-paginate: 2
+paginate: 6
 paginate_path: "/news/page:num/"
 
 collections:
