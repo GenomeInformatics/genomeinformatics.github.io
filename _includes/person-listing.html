@@ -1,0 +1,41 @@
+{% assign person=include.person %}
+<div class="person-listing" style="display:table;">
+	<div style="display:table-cell;width:1%;padding-bottom:6px;">
+	<a style="display:block;" href="{{ site.baseurl }}{{ person.url }}">
+		<div class="portrait-list" style="background-image:url({{ person.portrait }});"></div>
+	</a>
+	</div>
+	<div style="display:table-cell;padding-left: 10px;vertical-align: top;">
+		<h3 style="margin: 0;">{% include person-name.html name=person.name phd=person.phd %}</h3>
+	
+		<a href="{{ site.baseurl }}{{ person.url }}">[ more ]</a>
+		{% assign key = person.title | downcase %}
+		{% assign separator = '' %}
+		<div style="margin-top: 28px;line-height:1;">
+			{% for proj in site.projects %}
+				{% if proj.people contains key %}
+					{% if separator == 'yes' %}
+						&middot;
+					{% endif %}
+					{% assign separator = 'yes' %}
+					<span style="font-family: courier;">{{ proj.name }}</span>
+				{% endif %}
+			{% endfor %}
+		</div>
+		
+	</div>
+	<div style="display:table-cell;vertical-align:top;">
+		<div style="color: gray;float:right;margin:0;">
+			{{ person.role }}
+		</div>
+		
+		<div style="float:right;clear:right;margin-top:0px;">
+	{% for inst in site.institutes %}
+		{% assign key = inst.title | downcase %}
+		{% if person.institutes contains key %}
+			<a href="{{ inst.link }}"><div class="logo-small" style="background-image:url({{ inst.logo }});"></div></a>
+		{% endif %}
+	{% endfor %}
+		</div>
+	</div>
+</div>

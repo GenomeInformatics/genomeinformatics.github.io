@@ -3,7 +3,7 @@ layout: default
 ---
 
 <h1 class="page-name">{% include person-name.html name=page.name phd=page.phd %}</h1>
-<h3 style="text-align: right; margin: 0 0 10px 0;">{{ page.role }}</h3>
+<h3 style="text-align: right; margin: 0 0 10px 0;">{{ page.role }}{% if page.alum %} (alum){% endif %}</h3>
 <div style="float:right;">
 	{% for inst in site.institutes %}
 		{% assign key = inst.title | downcase %}
