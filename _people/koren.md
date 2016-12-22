@@ -1,6 +1,7 @@
 ---
 name: Sergey Koren
-pub-name: Koren S
+pub-names:
+- Koren S
 phd: yes
 role: Bioinformatics Scientist
 email: sergey.koren@nih.gov

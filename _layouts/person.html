@@ -88,9 +88,11 @@ layout: default
 {% for pair in site.data.publications %}
 	{% assign pub = pair[1] %}
 	{% assign authors = pub.authors | split: ", " %}
-	{% if authors contains page.pub-name %}
-		{% assign array = array | push: pair[1] %}
-	{% endif %}
+	{% for pub-name in page.pub-names %}
+		{% if authors contains pub-name %}
+			{% assign array = array | push: pair[1] %}
+		{% endif %}
+	{% endfor %}
 {% endfor %}
 
 {% if array.size > 0 %}

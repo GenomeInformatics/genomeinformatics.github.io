@@ -6,9 +6,11 @@
 {% for author in authors %}
 	{% assign converted = author | replace: " ", "&nbsp;" %}
 	{% for person in site.people %}
-		{% if person.pub-name == author %}
-			{% capture converted %}<a href="{{ site.baseurl }}{{ person.url }}">{{ author }}</a>{% endcapture %}
-		{% endif %}
+		{% for pub-name in person.pub-names %}
+			{% if pub-name == author %}
+				{% capture converted %}<a href="{{ site.baseurl }}{{ person.url }}">{{ author }}</a>{% endcapture %}
+			{% endif %}
+		{% endfor %}
 	{% endfor %}
 	{% assign authors-converted = authors-converted | push: converted %}
 {% endfor %}

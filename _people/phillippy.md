@@ -1,6 +1,7 @@
 ---
 name: Adam Phillippy
-pub-name: Phillippy AM
+pub-names:
+- Phillippy AM
 role: Investigator
 phd: yes
 email: adam.phillippy@nih.gov
