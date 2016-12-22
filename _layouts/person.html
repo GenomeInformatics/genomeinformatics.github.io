@@ -102,7 +102,8 @@ layout: default
 	<div class="see-all"><a href="{{ site.baseurl }}/person-publications/{{ key }}">see all {{ array.size }} publications with {{ page.name }}</a></div>
 {% endif %}
 {% assign sorted = array | sort: "date" %}
-{% for pub in sorted reversed limit: site.data.settings.person-page-pubs %}
+{% assign sorted = sorted | reverse %}
+{% for pub in sorted limit: site.data.settings.person-page-pubs %}
 	{% include publication.html pub=pub %}
 {% endfor %}
 </div>
