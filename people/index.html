@@ -4,14 +4,19 @@ layout: default
 
 <h1 class="page-name">People</h1>
 
+{% assign alums=false %}
+
 <div class="posts">
 	{% for person in site.people %}
-		{% unless person.alum %}
+		{% if person.alum %}
+			{% assign alums=true %}
+		{% else %}
 			{% include person-listing.html person=person %}
-		{% endunless %}
+		{% endif %}
 	{% endfor %}
 </div>
 
+{% if alums %}
 <h1 class="page-name" style="margin-top:50px;">Alumni</h1>
 
 <div class="posts">
@@ -21,4 +26,4 @@ layout: default
 		{% endif %}
 	{% endfor %}
 </div>
-
+{% endif %}
