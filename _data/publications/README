@@ -1,0 +1,8 @@
+CITATION FORMAT
+title: must be in quotes if includes ':' or '-' characters
+authors: Surname Initials, ...
+text: use DOI link (can be found on PubMed abstract page)
+preprint: if available, use DOI link (can be found on bioRxiv page)
+date: "YYYY-MM-DD format", must be in quotes
+journal: use PubMed abbreviations
+pubmed: pubmed identifier
