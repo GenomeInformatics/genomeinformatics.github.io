@@ -1,5 +1,5 @@
 ---
-name: MUMmer 3
+name: MUMmer
 home: http://mummer.sourceforge.net
 docs: http://mummer.sourceforge.net/manual
 source: https://sourceforge.net/projects/mummer/
