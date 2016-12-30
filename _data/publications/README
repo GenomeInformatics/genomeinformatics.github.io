@@ -1,7 +1,7 @@
 CITATION FORMAT
 title: must be in quotes if includes ':' or '-' characters
 authors: Surname Initials, ...
-text: open-access DOI links only (use pubmed or preprint if pub behind paywall)
+text: open-access DOI links (use pubmed or preprint link if pub behind paywall)
 date: "YYYY-MM-DD format", must be in quotes
-journal: use PubMed abbreviations
+journal: use pubmed abbreviations
 pubmed: pubmed identifier
