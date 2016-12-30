@@ -1,6 +1,6 @@
 title: "Mash: fast genome and metagenome distance estimation using MinHash"
 authors: Ondov BD, Treangen TJ, Melsted P, Mallonee AB, Bergman NH, Koren S, Phillippy AM
-text: http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x
-journal: Genome Biology
+text: https://dx.doi.org/10.1186/s13059-016-0997-x
+journal: Genome Biol
 date: "2016-06-20" # must be quoted
 pubmed: 27323842
