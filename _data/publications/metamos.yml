@@ -1,6 +1,6 @@
 title: "MetAMOS: a modular and open source metagenomic assembly and analysis pipeline"
 authors: Treangen TJ, Koren S, Sommer DD, Liu B, Astrovskaya I, Ondov B, Darling AE, Phillippy AM, Pop M
 text: https://dx.doi.org/10.1186/gb-2013-14-1-r2
-date: "2013-01-15" # must be quoted
+date: "2013-01-15"
 journal: Genome Biol
 pubmed: 23320958
