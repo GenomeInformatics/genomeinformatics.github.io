@@ -53,49 +53,6 @@ maxProjects: 1
 </div>
 {% endif %}
 
-{% if site.data.settings.landing-software %}
-{% assign count = site.projects.size %}
-<div class="section">
-{% include title-bar.html title="Software" %}
-{% include see-all.html name="projects" link="projects" count=count %}
-
-<!-- No hashes in Liquid so scan the whole list for each name to preserve order.
-Inefficient, but doesn't matter (yet). -->
-
-{% for query in site.data.settings.landing-software %}
-	{% for proj in site.projects %}
-		{% assign key = proj.title | downcase %}
-		{% if key == query %}
-		<div class=post>
-			<h3 class="mainHeading" style="font-family: courier;">{{ proj.title }}</h3>
-			<div class="postBody">
-				{{ proj.desc }}<br/>
-		        {% include project-links.html index=forloop.index %}
-	        </div>
-		</div>
-		{% endif %}
-    {% endfor %}
-{% endfor %}
-</div>
-{% endif %}
-
-{% if site.data.publications %}
-{% assign array = "" | split: "" %}
-{% for pair in site.data.publications %}
-	{% assign array = array | push: pair[1] %}
-{% endfor %}
-{% assign sorted = array | sort: "date" %}
-{% assign sorted = sorted | reverse %}
-{% assign count = site.data.publications.size %}
-<div class="section">
-{% include title-bar.html title="Publications" %}
-{% include see-all.html name="publications" link="publications" count=count %}
-{% for pub in sorted limit: site.data.settings.landing-pubs %}
-	{% include publication.html pub=pub %}
-{% endfor %}
-</div>
-{% endif %}
-
 {% if site.people %}
 {% assign count = site.people.size %}
 <div class="section">
@@ -108,6 +65,46 @@ Inefficient, but doesn't matter (yet). -->
     {% endfor %}
     {% include person-list-end.html %}
 </div>
+</div>
+{% endif %}
+
+{% if site.data.settings.landing-software %}
+  {% assign count = site.projects.size %}
+  <div class="section">
+  {% include title-bar.html title="Software" %}
+  {% include see-all.html name="projects" link="projects" count=count %}
+  {% for query in site.data.settings.landing-software %}
+            {% for proj in site.projects %}
+              {% unless proj.retired %}
+                {% assign key = proj.title | downcase %}
+		{% if key == query %}
+	       	  <div class=post>
+			<h3 class="mainHeading" style="font-family: courier;">{{ proj.title }}</h3>
+			<div class="postBody">
+				{{ proj.desc }}<br/>
+		        {% include project-links.html index=forloop.index %}
+			</div>
+		  </div>
+		{% endif %}
+	      {% endunless %}
+	    {% endfor %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if site.data.publications %}
+{% assign array = "" | split: "" %}
+{% for pair in site.data.publications %}
+	{% assign array = array | push: pair[1] %}
+{% endfor %}
+{% assign sorted = array | sort: "date" | reverse %}
+{% assign count = site.data.publications.size %}
+<div class="section">
+{% include title-bar.html title="Publications" %}
+{% include see-all.html name="publications" link="publications" count=count %}
+{% for pub in sorted limit: site.data.settings.landing-pubs %}
+	{% include publication.html pub=pub %}
+{% endfor %}
 </div>
 {% endif %}
 

@@ -13,13 +13,15 @@
 		{% assign separator = '' %}
 		<div style="margin-top: 28px;line-height:1;">
 			{% for proj in site.projects %}
-				{% if proj.people contains key %}
+			  {% unless proj.retired %}
+			    {% if proj.people contains key %}
 					{% if separator == 'yes' %}
 						&middot;
 					{% endif %}
 					{% assign separator = 'yes' %}
 					<span style="font-family: courier;">{{ proj.name }}</span>
-				{% endif %}
+			    {% endif %}
+			  {% endunless %}		
 			{% endfor %}
 		</div>
 		

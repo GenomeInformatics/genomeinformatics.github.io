@@ -24,11 +24,27 @@ layout: default
 <div style="display: inline; margin: 0;">
 	<div style="background-image:url({{ page.portrait }}); " class="portrait" src=""></div>
 </div>
+
+
+{% if page.homepage %}
 <div style="text-align: center; margin-top: 15px;">
-{% if page.email %}
-	{% include email.html email=page.email size=14 %}
-{% endif %}
+<span style="-webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;">
+<a href="{{ page.homepage }}">{{ page.homepage }}</a>
+</span>
 </div>
+{% endif %}
+
+
+{% if page.email %}
+<div style="text-align: center; margin-top: 15px;">
+{% include email.html email=page.email size=14 %}
+</div>
+{% endif %}
+
 <p>
 	{{ page.bio }}
 </p>
@@ -41,14 +57,15 @@ layout: default
 		{% assign array = array | push: proj %}
 	{% endif %}
 {% endfor %}
+{% assign sorted = array | sort: "date" | reverse %}
 
-{% if array.size > 0 %}
+{% if sorted.size > 0 %}
 <div class="section">
 	{% include title-bar.html title="Projects" %}
-	{% if array.size > site.data.settings.person-page-projects %}
-		<div class="see-all"><a href="{{ site.baseurl }}/person-projects/{{ key }}">see all {{ array.size }} projects for {{ page.name }}</a></div>
+	{% if sorted.size > site.data.settings.person-page-projects %}
+		<div class="see-all"><a href="{{ site.baseurl }}/person-projects/{{ key }}">see all {{ sorted.size }} projects for {{ page.name }}</a></div>
 	{% endif %}
-	{% for proj in array limit: site.data.settings.person-page-projects %}
+	{% for proj in sorted limit: site.data.settings.person-page-projects %}
 		<div class="post">
 			<h3 class="mainHeading" style="font-family: courier;">{{ proj.name }}</h3>
 			<div class="postBody">

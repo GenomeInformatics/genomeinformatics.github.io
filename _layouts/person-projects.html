@@ -30,7 +30,8 @@ layout: default
 
 {% assign key = page.title | downcase %}
 <div class="section">
-	{% for proj in site.projects %}
+        {% assign sorted = site.projects | sort: "date" | reverse %}
+	{% for proj in sorted %}
 		{% if proj.people contains key %}
 		<div class="post">
 			<h3 class="mainHeading" style="font-family: courier;">{{ proj.name }}</h3>

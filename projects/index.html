@@ -5,26 +5,47 @@ layout: default
 <h1 class="page-name">Software</h1>
 
 <div class="posts">
-{% assign sorted = site.projects | sort: 'name' %}
+<article class="post">
+
+  {% assign sorted = site.projects | sort: 'date' | reverse %}
+
+  <!-- active projects -->
   {% for proj in sorted %}
-    <article class="post">
-
-			<div style="float:right;">
-				{% include person-list-start.html %}
-				{% for person in site.people %}
-					{% assign key = person.title | downcase %}
-					{% if proj.people contains key %}
-						{% include person-list-item.html index=forloop.index size=32 radius=4 inits="yes" %}
-					{% endif %}
-				{% endfor %}
-				{% include person-list-end.html %}
-			</div>
-        <h2 style="font-family: courier;">{{ proj.name }}</h2>
-
-        <div class="postBody">
-	        {{ proj.desc }}<br/>
-	        {% include project-links.html index=forloop.index %}
-        </div>
-    </article>
+    {% unless proj.retired %}
+  
+    <div style="float:right;">
+      {% include person-list-start.html %}
+      {% for person in site.people %}
+        {% assign key = person.title | downcase %}
+        {% if proj.people contains key %}
+          {% include person-list-item.html index=forloop.index size=32 radius=4 inits="yes" %}
+        {% endif %}
+      {% endfor %}
+      {% include person-list-end.html %}
+    </div>
+    <h2 style="font-family: courier;">{{ proj.name }}</h2>
+    <div class="postBody">
+      {{ proj.desc }}<br/>
+      {% include project-links.html index=forloop.index %}
+    </div>
+    {% endunless %}
   {% endfor %}
+
+  <!-- retired projects -->
+  <div class="section">
+  {% include title-bar.html title="Retired" %}
+
+  {% for proj in sorted %}
+    {% if proj.retired %}
+  
+    <h2 style="font-family: courier;">{{ proj.name }}</h2>
+    <div class="postBody">
+      {{ proj.desc }}<br/>
+      {% include project-links.html index=forloop.index %}
+    </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+    
+</article>
 </div>

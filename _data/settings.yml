@@ -2,11 +2,11 @@ landing-news-posts: 1
 landing-pubs: 2
 
 landing-software:
- - mash
  - canu
-
+ - mash
+ 
 news-post-excerpt-delim: "<excerpt>"
 
 person-page-posts: 4
-person-page-projects: 2
-person-page-pubs: 2
+person-page-projects: 4
+person-page-pubs: 4
