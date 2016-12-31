@@ -1,5 +1,6 @@
 ---
 name: Harvest
+date: "2014-11-19"
 home: http://harvest.readthedocs.io/en/latest/
 desc:
  A suite of core-genome alignment and visualization tools for quickly analyzing

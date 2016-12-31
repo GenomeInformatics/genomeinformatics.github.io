@@ -1,5 +1,6 @@
 ---
 name: Krona
+date: "2011-09-30"
 home: http://github.com/marbl/krona/wiki
 docs: http://github.com/marbl/krona/wiki/Help
 source: https://github.com/marbl/krona

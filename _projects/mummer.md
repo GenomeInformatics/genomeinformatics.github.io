@@ -1,5 +1,6 @@
 ---
 name: MUMmer
+date: "2004-01-30"
 home: http://mummer.sourceforge.net
 docs: http://mummer.sourceforge.net/manual
 source: https://sourceforge.net/projects/mummer/
