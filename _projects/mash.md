@@ -14,4 +14,5 @@ people:
  - ondov
  - phillippy
  - dilthey
+ - koren
 ---
