@@ -8,7 +8,9 @@ desc:
 
 pubs:
  - amos
+ - bambus2
 
 people:
  - phillippy
+ - koren
 ---
