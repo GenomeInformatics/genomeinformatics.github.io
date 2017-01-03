@@ -37,7 +37,7 @@ defaults:
       path: ""
     values:
       layout: post
-      comments: true
+      comments: false
   -
     scope:
       path: "_projects"
