@@ -100,19 +100,3 @@ maxProjects: 1
 {% endfor %}
 </div>
 {% endif %}
-
-{% assign count = site.institutes.size %}
-<div class="section">
-{% include title-bar.html title="Collaborators" %}
-<div class="see-all"><a href="{{ site.baseurl }}/labs">see all {{ count }} collaborators</a></div>
-	<div class="center" style="margin: 10px 0px 10px 0px;">
-	{% for inst in site.institutes %}
-			<a style="" href="{{ inst.link }}">
-			<div style="display:inline-block;">
-				<div class="logo" style="background-image:url({{ inst.logo }});"></div>
-				<div>{{ inst.inits }}</div>
-			</div>
-			</a>
-	{% endfor %}
-	</div>
-</div>
