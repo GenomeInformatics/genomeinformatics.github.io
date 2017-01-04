@@ -66,13 +66,7 @@ layout: default
 		<div class="see-all"><a href="{{ site.baseurl }}/person-projects/{{ key }}">see all {{ sorted.size }} projects for {{ page.name }}</a></div>
 	{% endif %}
 	{% for proj in sorted limit: site.data.settings.person-page-projects %}
-		<div class="post">
-			<h3 class="mainHeading" style="font-family: courier;">{{ proj.name }}</h3>
-			<div class="postBody">
-				{{ proj.desc }}<br/>
-		        {% include project-links.html index=forloop.index %}
-	        </div>
-		</div>
+    	{% include project.html proj=proj %}
     {% endfor %}
 </div>
 {% endif %}

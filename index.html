@@ -71,13 +71,7 @@ maxProjects: 1
               {% unless proj.retired %}
                 {% assign key = proj.title | downcase %}
 		{% if key == query %}
-	       	  <div class=post>
-			<h3 class="mainHeading" style="font-family: courier;">{{ proj.title }}</h3>
-			<div class="postBody">
-				{{ proj.desc }}<br/>
-		        {% include project-links.html index=forloop.index %}
-			</div>
-		  </div>
+	    	{% include project.html proj=proj %}
 		{% endif %}
 	      {% endunless %}
 	    {% endfor %}

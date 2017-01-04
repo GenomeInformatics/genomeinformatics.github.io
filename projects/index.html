@@ -12,23 +12,7 @@ layout: default
   <!-- active projects -->
   {% for proj in sorted %}
     {% unless proj.retired %}
-    <div style="margin-top:25px">
-      <div style="float:right;">
-      {% include person-list-start.html %}
-      {% for person in site.people %}
-        {% assign key = person.title | downcase %}
-        {% if proj.people contains key %}
-          {% include person-list-item.html index=forloop.index size=32 radius=4 inits="yes" %}
-        {% endif %}
-      {% endfor %}
-      {% include person-list-end.html %}
-      </div>
-      <h2 style="font-family: courier;">{{ proj.name }}</h2>
-      <div class="postBody">
-        {{ proj.desc }}<br/>
-        {% include project-links.html index=forloop.index %}
-      </div>
-    </div>
+    	{% include project.html proj=proj people=true %}
     {% endunless %}
   {% endfor %}
 
@@ -38,24 +22,7 @@ layout: default
 
   {% for proj in sorted %}
     {% if proj.retired %}
-  
-    <div style="margin-top:25px">
-      <div style="float:right;">
-        {% include person-list-start.html %}
-        {% for person in site.people %}
-          {% assign key = person.title | downcase %}
-          {% if proj.people contains key %}
-            {% include person-list-item.html index=forloop.index size=32 radius=4 inits="yes" %}
-          {% endif %}
-        {% endfor %}
-        {% include person-list-end.html %}
-      </div>
-      <h2 style="font-family: courier;">{{ proj.name }}</h2>
-      <div class="postBody">
-        {{ proj.desc }}<br/>
-        {% include project-links.html index=forloop.index %}
-      </div>
-    </div>
+    	{% include project.html proj=proj people=true %}
     {% endif %}
   {% endfor %}
   </div>

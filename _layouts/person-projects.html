@@ -33,13 +33,7 @@ layout: default
         {% assign sorted = site.projects | sort: "date" | reverse %}
 	{% for proj in sorted %}
 		{% if proj.people contains key %}
-		<div class="post">
-			<h3 class="mainHeading" style="font-family: courier;">{{ proj.name }}</h3>
-			<div class="postBody">
-				{{ proj.desc }}<br/>
-		        {% include project-links.html index=forloop.index %}
-	        </div>
-		</div>
+	    	{% include project.html proj=proj %}
 		{% endif %}
     {% endfor %}
 </div>

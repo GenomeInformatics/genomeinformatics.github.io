@@ -1,4 +1,4 @@
-{% assign proj = site.projects[include.index] %}
+{% assign proj = include.proj %}
 
 <ul class="link-list">
 
@@ -20,8 +20,4 @@
 
 {% if proj.pubs %}
   <li><a href="{{ site.baseurl }}{{ proj.url }}">publications</a></li>
-{% endif %}
-
-{% if proj.retired %}
-  <li>(retired)</li>
 {% endif %}
