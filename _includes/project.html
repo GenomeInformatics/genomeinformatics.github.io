@@ -14,9 +14,15 @@
       </div>
 {% endif %}
 
-      <h3 style="margin-bottom:0;font-family: courier;{% if proj.retired %}color: gray;{% endif %}">{{ proj.name }}</h3>
+      <h3 style="margin-bottom:0;font-family: courier;{% if proj.retired %}color: #AAAAAA;{% endif %}">{{ proj.name }}</h3>
       <div class="postBody">
-        {{ proj.desc }}{% if proj.retired %}<span style="color:lightGray;"> (retired)</span>{% endif %}<br/>
+        {% if proj.retired %}
+	        <span style="color:#AAAAAA;">{{ proj.desc }}</span>
+	        <span style="color:gray;"> [ <a href="{{ site.baseurl }}/retired">retired</a> ]</span>
+        {% else %}
+        	{{ proj.desc }}
+        {% endif %}
+        <br/>
         {% include project-links.html proj=proj %}
       </div>
 </div>
