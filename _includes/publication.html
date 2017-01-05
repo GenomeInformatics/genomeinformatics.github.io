@@ -2,16 +2,32 @@
 
 <!-- turn recognized authors into links -->
 {% assign authors = pub.authors | split: ", " %}
-{% assign authors-converted = "" | split: "" %}
+{% assign limit = false %}
+{% if authors.size > site.data.settings.pub-author-limit %}
+	{% assign limit = true %}
+{% endif %}
+
+{% assign string = '' %}
 {% for author in authors %}
 	{% assign converted = author | replace: " ", "&nbsp;" %}
-	{% for person in site.people %}
-		{% for pub-name in person.pub-names %}
-			{% if pub-name == author %}
-				{% capture converted %}<a href="{{ site.baseurl }}{{ person.url }}">{{ author }}</a>{% endcapture %}
-			{% endif %}
-		{% endfor %}
-	{% endfor %}
+	{% if limit and site.data['indecesByNames'][author] == nil and forloop.index != 1 and forloop.index != authors.size %}
+		{% if skipped == false %}
+			{% assign string = string | append: " &hellip; " %}
+		{% endif %}
+		{% assign skipped = true %}
+	{% else %}
+		{% if skipped == false and forloop.index != 1 %}
+			{% assign string = string | append: ", " %}
+		{% endif %}
+		{% assign skipped = false %}
+		{% if site.data['indecesByNames'][author] %}
+			{% assign index = site.data['indecesByNames'][author] %}
+			{% capture link %}<a href="{{ site.baseurl }}{{ site.people[index].url }}">{{ converted }}</a>{% endcapture %}
+			{% assign string = string | append: link %}
+		{% else %}
+			{% assign string = string | append: converted %}
+		{% endif %}
+	{% endif %}
 	{% assign authors-converted = authors-converted | push: converted %}
 {% endfor %}
 
@@ -20,11 +36,16 @@
 	<div style="margin-left:15px">
 		<span class="pub-journal">{{ pub.journal }},</span> <span class="pub-date">{{ pub.date | date: "%B %e, %Y" }}</span>
 		<ul class="link-list">
-			<li><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{ pub.pubmed }}">PubMed</a></li>
-			<li><a href="{{ pub.text }}">Full text</a></li>
+			{% if pub.pubmed %}
+				<li><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{ pub.pubmed }}">PubMed</a></li>
+			{% endif %}
+			{% if pub.text %}
+				<li><a href="{{ pub.text }}">Full text</a></li>
+			{% endif %}
 		</ul>
 		<div class="postBody">
-			<span class="pub-authors">{{ authors-converted | join: ", " }}</span>
+			{{ site.data['test'] }}
+			<span class="pub-authors">{{ string }}</span>
 		</div>
 	</div>
 </article>
