@@ -10,6 +10,7 @@ desc:
 
 pubs: # cross-reference to _data/publications (no ".yml")
  - metamos
+ - imetamos
 
 people:
  - treangen
