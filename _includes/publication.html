@@ -7,28 +7,38 @@
 	{% assign limit = true %}
 {% endif %}
 
+{% assign pasted = authors | join: ':' %}
+{% assign pasted = pasted | prepend: ':' %}
+{% assign pasted = pasted | append: ':' %}
+
+{% for person in site.people %}
+	{% for pub-name in person.pub-names %}
+		{% capture link %}:<a href="{{ site.baseurl }}{{ person.url }}">{{ pub-name | replace: " ", "&nbsp;" }}</a>:{% endcapture %}
+		{% assign key = ':' | append: pub-name | append: ':' %}
+		{% assign pasted = pasted | replace: key, link %}
+	{% endfor %}
+{% endfor %}
+
+{% assign pasted = pasted | slice: 1, pasted.size - 2 %}
+{% assign authors = pasted | split: ':' %}
 {% assign string = '' %}
+
 {% for author in authors %}
-	{% assign converted = author | replace: " ", "&nbsp;" %}
-	{% if limit and site.data['indecesByNames'][author] == nil and forloop.index != 1 and forloop.index != authors.size %}
-		{% if skipped == false %}
-			{% assign string = string | append: " &hellip; " %}
-		{% endif %}
-		{% assign skipped = true %}
-	{% else %}
+	{% if limit == false or author contains '<' or forloop.index == 1 or forloop.index == authors.size %}
 		{% if skipped == false and forloop.index != 1 %}
 			{% assign string = string | append: ", " %}
 		{% endif %}
 		{% assign skipped = false %}
-		{% if site.data['indecesByNames'][author] %}
-			{% assign index = site.data['indecesByNames'][author] %}
-			{% capture link %}<a href="{{ site.baseurl }}{{ site.people[index].url }}">{{ converted }}</a>{% endcapture %}
-			{% assign string = string | append: link %}
-		{% else %}
-			{% assign string = string | append: converted %}
+		{% unless author contains '<' %}
+			{% assign author = author | replace: " ", "&nbsp;" %}
+		{% endunless %}
+		{% assign string = string | append: author %}
+	{% else %}
+		{% if skipped == false %}
+			{% assign string = string | append: " &hellip; " %}
 		{% endif %}
+		{% assign skipped = true %}
 	{% endif %}
-	{% assign authors-converted = authors-converted | push: converted %}
 {% endfor %}
 
 <article class="post" style="margin-top:15px;">
