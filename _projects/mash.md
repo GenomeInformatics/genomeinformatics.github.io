@@ -15,4 +15,6 @@ people:
  - phillippy
  - dilthey
  - koren
+ - jain
+ - sappington
 ---
