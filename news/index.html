@@ -29,7 +29,7 @@ layout: default
 	  </div>
 	  
       <div>
-      {% if post.excerpt.size != post.content.size and post != site.posts.first %}
+      {% if post.excerpt.size != post.content.size %}
       	<div class="excerpt">
 			{{ post.excerpt }}
 		</div>
