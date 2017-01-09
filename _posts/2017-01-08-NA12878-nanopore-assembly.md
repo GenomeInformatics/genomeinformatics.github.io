@@ -13,6 +13,8 @@ We had just released [Canu v1.4](https://github.com/marbl/canu/releases) and wer
 
 All Nanopore data and the assembly described below are available on the NA12878 consortium [GitHub page](https://github.com/nanopore-wgs-consortium/NA12878).
 
+(EDIT:2017-01-09) Check out [Mark Chaisson](https://twitter.com/mjpchaisson)'s look at SVs in [Clive Brown](https://twitter.com/Clive_G_Brown)'s data for more insight on current Nanopore error modes: [SV Calling in the cliveome](http://lateholocene.blogspot.com/2017/01/sv-calling-in-cliveome.html)
+
 ## Continuity
 As always, good assemblies are all about read length and coverage. We ended up doing both a 20x and 30x assembly because we launched the first one before all the data was available. Adding that additional 10x coverage made a big difference since this data included the rapid kit runs, which included the longest reads (some more 100 kb). Although the average read length did not change significantly between the two read sets (6.5 kb for both), the coverage in reads >10 kb increased from 10x to 16x. This resulted in a respectable contig NG50 of 3 Mbp for the 30x assembly. Here are the essential stats, where 'NG50' gives the contig size such that at least half of the 3.1 Gbp human genome is assembled into contigs of this size or larger:
 
