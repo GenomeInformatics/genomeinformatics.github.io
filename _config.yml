@@ -78,7 +78,7 @@ footer-links:
   instagram:
   linkedin:
   pinterest:
-  rss: yes
+  rss: # uncomment and put something here to enable
   twitter: aphillippy
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
