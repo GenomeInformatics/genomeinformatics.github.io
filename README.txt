@@ -40,7 +40,7 @@ variables used:
   authors: List of authors, keyed to file names in _people/, but without ".md"
            (http://yaml.org/type/seq.html)
   excerpt: Optional short description to show in lists. If not provided,
-    everything up to the excerpt delimiter (defined in _data/settings.yml) will
+    everything up to excerpt_separator (defined in _config.yml) will
     be used, or the entire post if there is no delimiter.
   excerpt_separator: Define your own excerpt delimiter for the post.
   comments: Currently off by default; set to true to enable

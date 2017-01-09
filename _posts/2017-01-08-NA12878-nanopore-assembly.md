@@ -3,7 +3,6 @@ title: Assembly of a human genome from nanopore sequencing data
 authors:
 - koren
 - phillippy
-excerpt_separator: "<!--excerpt-->"
 ---
 An [international consortium](https://github.com/nanopore-wgs-consortium/NA12878) recently released ~30x coverage of a human immortalized cell line (NA12878) sequenced using [Oxford Nanopore MinION](https://nanoporetech.com) instruments. Release 3 of this dataset included 39 flowcells, which generated 14,183,584 reads and 91,240,120,433 bases, mostly using the 1D ligation prep, but with a few rapid kit runs as well. Our friends [Nick Loman](https://twitter.com/pathogenomenick) and [Jared Simpson](https://twitter.com/jaredtsimpson/) asked if we could assemble this data with [Canu](http://canu.readthedocs.io/en/latest/). Of course we said yes.
 
