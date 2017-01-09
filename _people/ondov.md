@@ -3,8 +3,10 @@ name: Brian Ondov
 pub-names:
  - Ondov BD
  - Ondov B
-role: Bioinformatics Engineer
 email: brian.ondov@nih.gov
+scholar: https://scholar.google.com/citations?user=bPyA99MAAAAJ
+twitter: https://twitter.com/BrianOndov
+role: Bioinformatics Engineer
 institutes:
  - nih
 portrait: /img/ondov.jpeg

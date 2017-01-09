@@ -26,24 +26,28 @@ layout: default
 </div>
 
 
-{% if page.homepage %}
 <div style="text-align: center; margin-top: 15px;">
-<span style="-webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;">
-<a href="{{ page.homepage }}">{{ page.homepage }}</a>
-</span>
-</div>
-{% endif %}
 
+<ul class="link-list">
+
+  {% if page.homepage %}
+  <li><a href="{{ page.homepage }}">Homepage</a></li>
+  {% endif %}
+
+  {% if page.scholar %}
+  <li><a href="{{ page.scholar }}">Scholar</a></li>
+  {% endif %}
+
+  {% if page.twitter %}
+  <li><a href="{{ page.twitter }}">Twitter</a></li>
+  {% endif %}
+</ul>
 
 {% if page.email %}
-<div style="text-align: center; margin-top: 15px;">
-{% include email.html email=page.email size=14 %}
-</div>
+  {% include email.html email=page.email size=14 %}
 {% endif %}
+
+</div>
 
 <p>
 	{{ page.bio }}
