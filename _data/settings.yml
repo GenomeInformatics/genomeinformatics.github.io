@@ -4,8 +4,8 @@ landing-pubs: 2
 landing-software:
  - canu
  - mash
- 
-news-post-excerpt-delim: "<excerpt>"
+
+news-post-excerpt-delim: "<!--excerpt-->"
 
 person-page-posts: 4
 person-page-projects: 4

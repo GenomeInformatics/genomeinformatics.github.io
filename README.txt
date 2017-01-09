@@ -42,7 +42,8 @@ variables used:
   excerpt: Optional short description to show in lists. If not provided,
     everything up to the excerpt delimiter (defined in _data/settings.yml) will
     be used, or the entire post if there is no delimiter.
-  comments: Currently true by default; set to false to disable
+  excerpt_separator: Define your own excerpt delimiter for the post.
+  comments: Currently off by default; set to true to enable
             (http://yaml.org/type/bool.html)
 
 
