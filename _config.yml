@@ -78,7 +78,7 @@ footer-links:
   instagram:
   linkedin:
   pinterest:
-  rss: # uncomment and put something here to enable
+  rss: yes # uncomment and put something here to enable
   twitter: aphillippy
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
@@ -129,7 +129,7 @@ sass:
 # Use the following plug-ins
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-#  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
 
 # Exclude these files from your production _site
