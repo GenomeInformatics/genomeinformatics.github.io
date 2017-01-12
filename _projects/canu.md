@@ -8,7 +8,7 @@ desc:
  A single molecule sequence assembler for genomes large and small
 
 pubs:
- - canu
+ - 2016-08-24-Koren
 
 people:
  - walenz

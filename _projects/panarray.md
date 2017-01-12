@@ -6,7 +6,7 @@ desc:
  Pan-genome tiling array design for rapid comparative genomics
 
 pubs:
- - panarray
+ - 2009-09-16-Phillippy
 
 people:
  - phillippy

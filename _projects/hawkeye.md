@@ -7,7 +7,7 @@ desc:
  Visual analytics for genome assembly
 
 pubs:
- - hawkeye
+ - 2007-03-09-Schatz
 
 people:
  - phillippy

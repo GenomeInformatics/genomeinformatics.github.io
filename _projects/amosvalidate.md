@@ -7,7 +7,7 @@ desc:
  Automated genome assembly validation
 
 pubs:
- - amosvalidate
+ - 2008-03-14-Phillippy
 
 people:
  - phillippy

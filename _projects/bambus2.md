@@ -7,7 +7,7 @@ desc:
  Metagenomic scaffolding and variant detection
 
 pubs:
- - bambus2
+ - 2011-11-01-Koren
 
 people:
  - koren

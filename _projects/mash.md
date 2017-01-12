@@ -8,7 +8,7 @@ desc:
  Fast genome and metagenome distance estimation using MinHash
  
 pubs: # cross-reference to _data/publications (no ".yml")
- - mash
+ - 2016-06-20-Ondov
 
 people:
  - ondov

@@ -8,7 +8,7 @@ desc:
  A probabilistic sequence overlap algorithm
 
 pubs:
- - mhap
+ - 2015-05-25-Berlin
 
 people:
  - berlin

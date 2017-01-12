@@ -7,8 +7,8 @@ desc:
  A modular sequence assembly infrastructure
 
 pubs:
- - amos
- - amosasm
+ - 2011-12-23-Schatz
+ - 2011-03-18-Treangen
 
 people:
  - phillippy

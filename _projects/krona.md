@@ -9,7 +9,7 @@ desc:
  Interactively explore metagenomes and more from a web browser
  
 pubs: # cross-reference to _data/publications (no ".yml")
- - krona
+ - 2011-09-30-Ondov
 
 people:
  - phillippy

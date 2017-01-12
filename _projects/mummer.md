@@ -9,7 +9,7 @@ desc:
  Ultra-fast alignment of large-scale DNA and protein sequences
  
 pubs: # cross-reference to _data/publications (no ".yml")
- - mummer3
+ - 2004-01-30-Kurtz
 
 people:
   - phillippy

@@ -9,8 +9,8 @@ desc:
  A metagenomic and isolate assembly and analysis pipeline
 
 pubs: # cross-reference to _data/publications (no ".yml")
- - metamos
- - imetamos
+ - 2013-01-15-Treangen
+ - 2014-05-03-Koren
 
 people:
  - treangen

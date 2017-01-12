@@ -7,7 +7,7 @@ desc:
  Comparative genome assembler
 
 pubs:
- - amoscmp
+ - 2004-09-01-Pop
 
 people:
  - phillippy

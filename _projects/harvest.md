@@ -7,7 +7,7 @@ desc:
  thousands of intraspecific microbial genomes
  
 pubs: # cross-reference to _data/publications (no ".yml")
- - harvest
+ - 2014-11-19-Treangen
 
 people:
  - treangen

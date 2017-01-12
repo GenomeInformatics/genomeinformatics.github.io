@@ -7,8 +7,8 @@ desc:
  PacBio read correction and assembly pipeline
 
 pubs:
- - pbcr
- - asmcomplexity
+ - 2012-07-01-Koren
+ - 2013-09-13-Koren
 
 people:
  - koren
