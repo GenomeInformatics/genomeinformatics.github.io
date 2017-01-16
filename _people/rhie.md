@@ -1,7 +1,7 @@
 ---
 name: Arang Rhie
 pub-names:
-- Rhie A
+ - Rhie A
 phd: yes
 email: arang.rhie@nih.gov
 scholar: https://scholar.google.com/citations?user=XzUOb7IAAAAJ
