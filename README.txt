@@ -6,6 +6,7 @@ Install the jekyll Ruby module(s):
  [ >export GEM_HOME=~/.gem # if you don't have admin rights ]
    >gem install jekyll
    >gem install jekyll-paginate # for multipage blog listings
+   >gem install jekyll-feed # for Atom (RSS-like) feed
 
 Run jekyll in 'watch' mode to update as you modify files (restart if _config.yml
    changes):
