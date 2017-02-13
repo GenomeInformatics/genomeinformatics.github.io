@@ -10,6 +10,8 @@ desc:
  
 pubs: # cross-reference to _data/publications (no ".yml")
  - 2004-01-30-Kurtz
+ - 2003-02-01-Delcher
+ - 2002-06-01-Delcher
 
 people:
   - phillippy
