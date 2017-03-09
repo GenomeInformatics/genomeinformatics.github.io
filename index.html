@@ -33,11 +33,11 @@ maxProjects: 1
 	  <div style="color: gray;">{{ post.date | date: "%B %e, %Y" }}</div>
       <div class="postBody excerpt">
       {% if post.excerpt.size != post.content.size %}
-			{{ post.excerpt }}
-			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
-		{% else %}
+                {{ post.excerpt }}
 		<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
-	  {% endif %}
+      {% else %}
+		{{ post.content }}
+      {% endif %}
       </div>
 
 </div>

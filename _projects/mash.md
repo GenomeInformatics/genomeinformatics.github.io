@@ -13,8 +13,6 @@ pubs: # cross-reference to _data/publications (no ".yml")
 people:
  - ondov
  - phillippy
- - dilthey
  - koren
- - jain
  - sappington
 ---

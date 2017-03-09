@@ -29,14 +29,15 @@ layout: default
 	  </div>
 	  
       <div>
-		{% if post.excerpt.size != post.content.size %}
       	<div class="excerpt">
-			{{ post.excerpt }}
-		</div>
-			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
-		{% else %}
-			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
-		{% endif %}
+	{% if post.excerpt.size != post.content.size %}
+	     {{ post.excerpt }}
+	     <a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
+	{% else %}
+	     {{ post.content }}
+	     <a href="{{ site.baseurl }}{{ post.url }}">{% include post-link.html %}</a>
+	{% endif %}
+	</div>     
       </div>
     </article>
   {% endfor %}
