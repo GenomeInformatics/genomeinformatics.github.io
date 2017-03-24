@@ -1,7 +1,16 @@
 {% assign pub=include.pub %}
 
+<!-- remove period from end of authors -->
+{% assign lastChar = pub.authors | slice: -1 %}
+{% if lastChar == "." %}
+	{% assign sizeNew = pub.authors.size | minus: 1 %}
+	{% assign authorsTrimmed = pub.authors | slice: 0, sizeNew %}
+{% else %}
+	{% assign authorsTrimmed = pub.authors %}
+{% endif %}
+
 <!-- turn recognized authors into links -->
-{% assign authors = pub.authors | split: ", " %}
+{% assign authors = authorsTrimmed | split: ", " %}
 {% assign limit = false %}
 {% if authors.size > site.data.settings.pub-author-limit %}
 	{% assign limit = true %}
@@ -41,8 +50,17 @@
 	{% endif %}
 {% endfor %}
 
+<!-- remove period from end of title -->
+{% assign lastChar = pub.title | slice: -1 %}
+{% if lastChar == "." %}
+	{% assign sizeNew = pub.title.size | minus: 1 %}
+	{% assign titleTrimmed = pub.title | slice: 0, sizeNew %}
+{% else %}
+	{% assign titleTrimmed = pub.title %}
+{% endif %}
+
 <article class="post" style="margin-top:15px;">
-	<span class="pub-title">{{ pub.title }}</span>
+	<span class="pub-title">{{ titleTrimmed }}</span>
 	<div style="margin-left:15px">
 		<span class="pub-journal">{{ pub.journal }},</span> <span class="pub-date">{{ pub.date | date: "%B %e, %Y" }}</span>
 		<ul class="link-list">
