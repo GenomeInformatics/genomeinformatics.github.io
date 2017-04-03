@@ -11,34 +11,29 @@ layout: default
   {% for post in paginator.posts %}
     <article class="post">
 
-	<div style="float:right;">
+      <div style="float:right;">
 		{% include person-list-start.html %}
 		{% for person in site.people %}
 			{% assign key = person.title | downcase %}
 			{% if post.authors contains key %}
-				{% include person-list-item.html index=forloop.index size=40 %}
+				{% include person-list-item.html index=forloop.index size=40 inits='yes' %}
 			{% endif %}
 		{% endfor %}
 		{% include person-list-end.html %}
-	</div>
-	
-      <h2>{{ post.title }}</h2>
-
-	  <div class="subheading">
-	  	{{ post.date | date: "%B %e, %Y" }}
 	  </div>
-	  
-      <div>
-      	<div class="excerpt">
-	{% if post.excerpt.size != post.content.size %}
-	     {{ post.excerpt }}
-	     <a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
-	{% else %}
-	     {{ post.content }}
-	     <a href="{{ site.baseurl }}{{ post.url }}">{% include post-link.html %}</a>
-	{% endif %}
-	</div>     
+      <h3 class="mainHeading">{{ post.title }}</h3>
+	  <div style="color: gray;">{{ post.date | date: "%B %e, %Y" }}</div>
+      <div class="postBody excerpt">
+                {{ post.excerpt }}
       </div>
+      <div class="container" style="margin-top:8px;">
+      {% if post.excerpt.size != post.content.size %}
+		<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
+      {% else %}
+	       <a href="{{ site.baseurl }}{{ post.url }}">{% include post-link.html %}</a>
+      {% endif %}
+      </div>
+	  
     </article>
   {% endfor %}
 </div>
