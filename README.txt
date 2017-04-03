@@ -47,6 +47,14 @@ variables used:
   comments: Currently off by default; set to true to enable
             (http://yaml.org/type/bool.html)
 
+Standard Markdown (http://daringfireball.net/projects/markdown/) is accepted
+and will be rendered in the style of the site. It is not recommended to use H1
+headers (single flanking "#" or "="-underline) within posts, since they would
+appear the same size as the post title. Pure HTML can be used within Markdown,
+which is useful, for example, for centering images:
+
+  <div style="text-align:center;"><img src="…"/></div>
+
 
 Editing/adding data
 -------------------
