@@ -7,6 +7,7 @@ Install the jekyll Ruby module(s):
    >gem install jekyll
    >gem install jekyll-paginate # for multipage blog listings
    >gem install jekyll-feed # for Atom (RSS-like) feed
+   >gem install jekyll-sitemap # for web crawlers
 
 Run jekyll in 'watch' mode to update as you modify files (restart if _config.yml
    changes):
