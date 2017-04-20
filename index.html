@@ -31,14 +31,18 @@ maxProjects: 1
 	  </div>
       <h3 class="mainHeading">{{ post.title }}</h3>
 	  <div style="color: gray;">{{ post.date | date: "%B %e, %Y" }}</div>
-      <div class="postBody excerpt">
       {% if post.excerpt.size != post.content.size %}
-                {{ post.excerpt }}
-		<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
+      <div class="postBody excerpt">
       {% else %}
-		{{ post.content }}
+      <div class="postShort excerpt">
       {% endif %}
+                {{ post.excerpt }}
       </div>
+      {% if post.excerpt.size != post.content.size %}
+      <div class="linkMore">
+			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
+      </div>
+      {% endif %}
 
 </div>
 {% endfor %}

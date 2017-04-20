@@ -548,10 +548,19 @@ ul.link-list {
 	border-left: 1px solid lightGray;
 }
 
+.postShort {
+	margin-left: 10px;
+	padding-left: 5px;
+}
+
 .excerpt {
 	p {
-		margin: 0;
+		margin: 5px 0 0 0;
 	}
+}
+
+.linkMore {
+	margin: 5px 0 0 10px;
 }
 
 .wrapper-footer {

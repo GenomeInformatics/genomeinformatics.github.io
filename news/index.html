@@ -23,16 +23,18 @@ layout: default
 	  </div>
       <h3 class="mainHeading">{{ post.title }}</h3>
 	  <div style="color: gray;">{{ post.date | date: "%B %e, %Y" }}</div>
+      {% if post.excerpt.size != post.content.size %}
       <div class="postBody excerpt">
+      {% else %}
+      <div class="postShort excerpt">
+      {% endif %}
                 {{ post.excerpt }}
       </div>
-      <div class="container" style="margin-top:8px;">
       {% if post.excerpt.size != post.content.size %}
-		<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
-      {% else %}
-	       <a href="{{ site.baseurl }}{{ post.url }}">{% include post-link.html %}</a>
-      {% endif %}
+      <div class="linkMore">
+			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
       </div>
+      {% endif %}
 	  
     </article>
   {% endfor %}
