@@ -39,12 +39,11 @@ layout: default
 
 {% if count > 0 %}
 <div class="section">
-	<ul>
 	{% for post in site.posts %}
 		{% if post.authors contains key %}
-			<li><h3 style="margin:0;"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span></h3></li>
+			<h3 class="post-list"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+			<span style="color:gray;">{{ post.date | date: "%B %e, %Y" }}</span>
 		{% endif %}
 	{% endfor %}
-	</ul>
 </div>
 {% endif %}
