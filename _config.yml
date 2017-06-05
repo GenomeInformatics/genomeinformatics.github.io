@@ -48,21 +48,28 @@ defaults:
       path: "_people"
     values:
       layout: person
+      use_name_for_title: true
   -
     scope:
       path: "_person-publications"
     values:
       layout: person-publications
+      use_name_for_title: true
+      subtitle: Publications
   -
     scope:
       path: "_person-projects"
     values:
       layout: person-projects
+      use_name_for_title: true
+      subtitle: Projects
   -
     scope:
       path: "_person-posts"
     values:
       layout: person-posts
+      use_name_for_title: true
+      subtitle: News
 
 #
 # Flags below are optional
