@@ -6,7 +6,7 @@ pub-names:
 email: brian.ondov@nih.gov
 scholar: https://scholar.google.com/citations?user=bPyA99MAAAAJ
 twitter: https://twitter.com/BrianOndov
-role: PhD Student
+role: Graduate Student
 institutes:
  - nih
 portrait: /img/ondov.jpeg
