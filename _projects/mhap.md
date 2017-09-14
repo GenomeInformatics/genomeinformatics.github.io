@@ -1,7 +1,7 @@
 ---
 name: MHAP
 date: "2015-05-25"
-docs: http://mhap.readthedocs.io/en/latest/
+home: http://mhap.readthedocs.io/en/latest/
 download: https://github.com/marbl/MHAP/releases
 source: https://github.com/marbl/MHAP
 desc:

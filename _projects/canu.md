@@ -14,4 +14,5 @@ people:
  - walenz
  - koren
  - phillippy
+ - rhie
 ---

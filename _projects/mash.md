@@ -1,7 +1,7 @@
 ---
 name: Mash
 date: "2016-06-20"
-docs: http://mash.readthedocs.io/en/latest/
+home: http://mash.readthedocs.io
 source: https://github.com/marbl/mash
 download: https://github.com/marbl/Mash/releases
 desc:
