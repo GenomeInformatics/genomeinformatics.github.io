@@ -10,4 +10,5 @@ institutes:
  - mit
 portrait: /img/sappington.jpg
 bio: Anna is a former summer fellow and special volunteer in the Genome Informatics Section. She is currently a student at MIT studying computer science and molecular biology.
+alum: true
 ---
