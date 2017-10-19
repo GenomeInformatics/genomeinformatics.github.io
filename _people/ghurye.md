@@ -1,5 +1,5 @@
 ---
-name: Ghurye Jay
+name: Jay Ghurye
 pub-names:
  - Ghurye J
 email: jayg@cs.umd.edu
