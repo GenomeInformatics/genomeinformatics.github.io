@@ -6,7 +6,7 @@ email: cjain@gatech.edu
 homepage: https://sites.google.com/site/chirgjain/
 scholar: https://scholar.google.com/citations?user=Y2UmkF0AAAAJ
 twitter: https://twitter.com/chirgjain
-role: Special Volunteer
+role: Graduate Student
 institutes:
  - nih
  - gatech

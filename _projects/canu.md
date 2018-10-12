@@ -15,4 +15,5 @@ people:
  - koren
  - phillippy
  - rhie
+ - chang
 ---

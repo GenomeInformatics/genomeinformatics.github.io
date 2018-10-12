@@ -6,7 +6,7 @@ email: jayg@cs.umd.edu
 homepage: http://cbcb.umd.edu/~jayg/
 scholar: https://scholar.google.com/citations?user=ZMIwuioAAAAJ&hl=en
 twitter: https://twitter.com/jayghurye
-role: Special Volunteer
+role: Graduate Student
 institutes:
  - nih
  - umd

@@ -1,6 +1,6 @@
 ---
-name: Georgia Tech, Computational Science and Engineering
+name: Georgia Institute of Technology
 inits: GaTech
 logo: /img/gatech.png
-link: https://www.cse.gatech.edu
+link: http://www.gatech.edu
 ---

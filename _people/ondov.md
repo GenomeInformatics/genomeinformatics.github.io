@@ -9,6 +9,7 @@ twitter: https://twitter.com/BrianOndov
 role: Graduate Student
 institutes:
  - nih
+ - umd
 portrait: /img/ondov.jpeg
 bio:
  Brian Ondov studied computer science at RPI and bioinformatics at Georgia Tech.
