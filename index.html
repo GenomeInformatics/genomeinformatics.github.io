@@ -56,10 +56,10 @@ maxProjects: 1
 <div class="see-all"><a href="{{ site.baseurl }}/people">see all {{ count }} people</a></div>
 <div style="text-align: center;margin-top:15px;">
 	{% include person-list-start.html %}
-	{% for person in site.people limit:10 %}
+	{% for person in site.people limit:11 %}
 		{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
-    {% endfor %}
-    {% include person-list-end.html %}
+	{% endfor %}
+	{% include person-list-end.html %}
 </div>
 </div>
 {% endif %}
