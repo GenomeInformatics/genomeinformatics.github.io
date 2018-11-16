@@ -1,6 +1,6 @@
 title: "A fast adaptive algorithm for computing whole-genome homology maps"
 authors: Jain C, Koren S, Dilthey A, Phillippy AM, Aluru S
-text: https://doi.org/10.1101/259986
-date: "2018-02-05"
-journal: bioRxiv
-#pubmed: 
+text: https://doi.org/10.1093/bioinformatics/bty597
+date: "2018-09-01"
+journal: Bioinformatics
+pubmed: 30423094

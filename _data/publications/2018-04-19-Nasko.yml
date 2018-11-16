@@ -1,6 +1,6 @@
-title: "RefSeq database growth influences the accuracy of k-mer-based species identification"
+title: "RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification"
 authors: Nasko DJ, Koren S, Phillippy AM, Treangen TJ
-text: https://doi.org/10.1101/304972
-date: "2018-04-19"
-journal: bioRxiv
-#pubmed: 
+text: https://doi.org/10.1186/s13059-018-1554-6
+date: "2018-10-30"
+journal: Genome Biology
+pubmed: 30373669

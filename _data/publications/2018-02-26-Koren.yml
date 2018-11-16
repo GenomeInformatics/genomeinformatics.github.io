@@ -1,6 +1,6 @@
-title: "Complete assembly of parental haplotypes with trio binning"
+title: "De novo assembly of haplotype-resolved genomes with trio binning"
 authors: Koren S, Rhie A, Walenz BP, Dilthey AT, Bickhart DM, Kingan SB, Hiendleder S, Williams JL, Smith TPL, Phillippy AM
-text: https://doi.org/10.1101/271486
-date: "2018-02-26"
-journal: bioRxiv
-#pubmed: 
+text: https://doi.org/10.1038/nbt.4277
+date: "2018-10-22"
+journal: Nature Biotechnology
+pubmed: 30346939
