@@ -9,8 +9,8 @@ desc:
 
 pubs: # cross-reference to _data/publications (no ".yml")
  - 2017-01-27-Jain
+ - 2017-11-27-Jain
  - 2018-02-05-Jain
- - 2018-11-27-Jain
 
 people:
  - phillippy
