@@ -6,9 +6,11 @@ source: https://github.com/marbl/mashmap
 download: https://github.com/marbl/MashMap/releases
 desc:
  A fast and approximate long read mapper
- 
+
 pubs: # cross-reference to _data/publications (no ".yml")
  - 2017-01-27-Jain
+ - 2018-02-05-Jain
+ - 2018-11-27-Jain
 
 people:
  - phillippy
