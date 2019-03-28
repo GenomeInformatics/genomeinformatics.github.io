@@ -1,1 +1,1 @@
-{{ include.name }}{% if include.phd %}, PhD{% endif %}
+{{ include.name }}{% unless include.degree == blank %}, {{include.degree}}{% endif %}

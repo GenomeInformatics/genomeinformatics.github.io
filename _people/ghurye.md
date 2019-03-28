@@ -2,7 +2,7 @@
 name: Jay Ghurye
 pub-names:
  - Ghurye J
-phd: yes
+degree: PhD
 email: jayg@cs.umd.edu
 homepage: http://cbcb.umd.edu/~jayg/
 scholar: https://scholar.google.com/citations?user=ZMIwuioAAAAJ&hl=en

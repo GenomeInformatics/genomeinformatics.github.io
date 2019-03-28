@@ -6,7 +6,7 @@
 	</a>
 	</div>
 	<div style="display:table-cell;padding-left: 10px;vertical-align: top;">
-		<h3 style="margin: 0;">{% include person-name.html name=person.name phd=person.phd %}</h3>
+		<h3 style="margin: 0;">{% include person-name.html name=person.name degree=person.degree %}</h3>
 	
 		<a href="{{ site.baseurl }}{{ person.url }}">[ more ]</a>
 		{% assign key = person.title | downcase %}

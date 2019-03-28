@@ -2,7 +2,7 @@
 name: Arang Rhie
 pub-names:
  - Rhie A
-phd: yes
+degree: PhD
 email: arang.rhie@nih.gov
 scholar: https://scholar.google.com/citations?user=XzUOb7IAAAAJ
 twitter: https://twitter.com/ArangRhie

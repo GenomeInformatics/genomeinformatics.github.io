@@ -3,7 +3,7 @@ name: Alexander Dilthey
 pub-names:
 - Dilthey A
 - Dilthey AT
-phd: yes
+degree: DPhil
 email: Alexander.Dilthey@med.uni-duesseldorf.de
 homepage: https://alexanderdilthey.github.io/
 scholar: https://scholar.google.com/citations?user=K2Oy_DAAAAAJ
