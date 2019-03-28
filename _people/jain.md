@@ -2,6 +2,7 @@
 name: Chirag Jain
 pub-names:
  - Jain C
+phd: yes
 email: cjain@gatech.edu
 homepage: https://sites.google.com/site/chirgjain/
 scholar: https://scholar.google.com/citations?user=Y2UmkF0AAAAJ
