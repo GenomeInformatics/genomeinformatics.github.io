@@ -11,6 +11,23 @@ maxProjects: 1
 	<h1 class="title"><span class="accent">G</span>enome <span class="accent">I</span>nformatics <span class="accent">S</span>ection</h1>
 </div>
 
+{% if site.people %}
+{% assign count = site.people.size %}
+<div class="section">
+{% include title-bar.html title="People" %}
+<div class="see-all"><a href="{{ site.baseurl }}/people">see all {{ count }} people</a></div>
+<div style="text-align: center;margin-top:15px;">
+	{% include person-list-start.html %}
+	{% for person in site.people limit:10 %}
+		{% unless person.alum %}
+			{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
+		{% endunless %}
+	{% endfor %}
+	{% include person-list-end.html %}
+</div>
+</div>
+{% endif %}
+
 {% if site.posts.size > 0 %}
 {% assign post = site.posts.first %}
 {% assign count = site.posts.size %}
@@ -46,21 +63,6 @@ maxProjects: 1
 
 </div>
 {% endfor %}
-</div>
-{% endif %}
-
-{% if site.people %}
-{% assign count = site.people.size %}
-<div class="section">
-{% include title-bar.html title="People" %}
-<div class="see-all"><a href="{{ site.baseurl }}/people">see all {{ count }} people</a></div>
-<div style="text-align: center;margin-top:15px;">
-	{% include person-list-start.html %}
-	{% for person in site.people limit:11 %}
-		{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
-	{% endfor %}
-	{% include person-list-end.html %}
-</div>
 </div>
 {% endif %}
 
