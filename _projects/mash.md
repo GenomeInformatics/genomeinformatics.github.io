@@ -9,6 +9,7 @@ desc:
 
 pubs: # cross-reference to _data/publications (no ".yml")
  - 2016-06-20-Ondov
+ - 2019-03-01-Ondov
 
 people:
  - ondov

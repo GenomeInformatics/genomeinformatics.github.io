@@ -2,29 +2,61 @@
 layout: default
 #title: About
 permalink: /
-
-# how many projects to show
-maxProjects: 1
 ---
 
 <div class="center">
 	<h1 class="title"><span class="accent">G</span>enome <span class="accent">I</span>nformatics <span class="accent">S</span>ection</h1>
+	<h4>Our section develops and applies computational methods for the analysis of massive genomics datasets, focusing on the challeneges of genome sequencing and comparative genomics. We aim to improve such foundational processes and translate emerging genomic technologies into practice.</h4>
 </div>
 
 {% if site.people %}
 {% assign count = site.people.size %}
 <div class="section">
 {% include title-bar.html title="People" %}
-<div class="see-all"><a href="{{ site.baseurl }}/people">see all {{ count }} people</a></div>
+<div class="see-all"><a href="{{ site.baseurl }}/people">see all members</a></div>
 <div style="text-align: center;margin-top:15px;">
 	{% include person-list-start.html %}
-	{% for person in site.people limit:10 %}
+	{% for person in site.people %}
 		{% unless person.alum %}
 			{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
 		{% endunless %}
 	{% endfor %}
 	{% include person-list-end.html %}
 </div>
+</div>
+{% endif %}
+
+{% if site.data.publications %}
+{% assign array = "" | split: "" %}
+{% for pair in site.data.publications %}
+	{% assign array = array | push: pair[1] %}
+{% endfor %}
+{% assign sorted = array | sort: "date" | reverse %}
+{% assign count = site.data.publications.size %}
+<div class="section">
+{% include title-bar.html title="Publications" %}
+{% include see-all.html name="publications" link="publications" count=count %}
+{% for pub in sorted limit: site.data.settings.landing-pubs %}
+	{% include publication.html pub=pub %}
+{% endfor %}
+</div>
+{% endif %}
+
+{% if site.data.settings.landing-software %}
+  {% assign count = site.projects.size %}
+  <div class="section">
+  {% include title-bar.html title="Software" %}
+  {% include see-all.html name="projects" link="projects" count=count %}
+  {% for query in site.data.settings.landing-software %}
+            {% for proj in site.projects %}
+              {% unless proj.retired %}
+                {% assign key = proj.title | downcase %}
+		{% if key == query %}
+	    	{% include project.html proj=proj %}
+		{% endif %}
+	      {% endunless %}
+	    {% endfor %}
+  {% endfor %}
 </div>
 {% endif %}
 
@@ -62,40 +94,6 @@ maxProjects: 1
       {% endif %}
 
 </div>
-{% endfor %}
-</div>
-{% endif %}
-
-{% if site.data.settings.landing-software %}
-  {% assign count = site.projects.size %}
-  <div class="section">
-  {% include title-bar.html title="Software" %}
-  {% include see-all.html name="projects" link="projects" count=count %}
-  {% for query in site.data.settings.landing-software %}
-            {% for proj in site.projects %}
-              {% unless proj.retired %}
-                {% assign key = proj.title | downcase %}
-		{% if key == query %}
-	    	{% include project.html proj=proj %}
-		{% endif %}
-	      {% endunless %}
-	    {% endfor %}
-  {% endfor %}
-</div>
-{% endif %}
-
-{% if site.data.publications %}
-{% assign array = "" | split: "" %}
-{% for pair in site.data.publications %}
-	{% assign array = array | push: pair[1] %}
-{% endfor %}
-{% assign sorted = array | sort: "date" | reverse %}
-{% assign count = site.data.publications.size %}
-<div class="section">
-{% include title-bar.html title="Publications" %}
-{% include see-all.html name="publications" link="publications" count=count %}
-{% for pub in sorted limit: site.data.settings.landing-pubs %}
-	{% include publication.html pub=pub %}
 {% endfor %}
 </div>
 {% endif %}

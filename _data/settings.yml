@@ -1,9 +1,10 @@
 landing-news-posts: 2
-landing-pubs: 2
+landing-pubs: 3
 
 landing-software:
  - canu
  - mash
+ - krona
 
 person-page-posts: 4
 person-page-projects: 4
