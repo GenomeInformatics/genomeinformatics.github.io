@@ -17,4 +17,5 @@ people:
  - phillippy
  - rhie
  - chang
+ - nurk
 ---
