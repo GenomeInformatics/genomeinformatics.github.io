@@ -30,8 +30,8 @@ while(<>) {
     $tag = $1;
     $value = $2;
     $value =~ s/\r//g;
-    if ( $tag eq "PMID" ) {
-      # only in MEDLINE files
+    if ( $tag eq "PMID" || $tag eq "AN" ) {
+      # only in MEDLINE files, used to be PMID now seems to be AN
       $pubmed = $value;
     }
     elsif ( $tag eq "T1" || $tag eq "TI" ) {
