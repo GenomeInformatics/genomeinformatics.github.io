@@ -10,6 +10,7 @@ desc:
 pubs:
  - 2016-08-24-Koren
  - 2018-02-26-Koren
+ - 2020-03-17-Nurk
 
 people:
  - walenz
