@@ -1,6 +1,6 @@
-title: "Efficient de novo assembly of eleven human genomes using PromethION sequencing and a novel nanopore toolkit"
-authors: Shafin K, Pesout T, Lorig-Roach R, Haukness M, Olsen HE, Bosworth C, Armstrong J, Tigyi K, Maurer N, Koren S, Sedlazeck FJ, Marschall T, Mayes S, Costa V, Zook JM, Liu KJ, Kilburn D, Sorensen M, Munson KM, Vollger MR, Eichler EE, Salama S, Haussler D, Green RE, Akeson M, Phillippy A, Miga KH, Carnevali P, Jain M, Paten B
-text: https://doi.org/10.1101/715722
-date: "2019-07-26"
-journal: bioRxiv
+title: "Nanopore sequencing and the Shasta toolkit enable efficient de novo assembly of eleven human genomes"
+authors: Shafin K, Pesout T, Lorig-Roach R, Haukness M, Olsen HE, Bosworth C, Armstrong J, Tigyi K, Maurer N, Koren S, Sedlazeck FJ, Marschall T, Mayes S, Costa V, Zook JM, Liu KJ, Kilburn D, Sorensen M, Munson KM, Vollger MR, Monlong J, Garrison E, Eichler EE, Salama S, Haussler D, Green RE, Akeson M, Phillippy AM, Miga KH, Carnevali P, Jain M, Paten B
+text: https://doi.org/10.1038/s41587-020-0503-6
+date: "2020-05-04"
+journal: Nature Biotechnology
 pubmed: 
