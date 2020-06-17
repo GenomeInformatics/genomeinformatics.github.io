@@ -1,6 +1,6 @@
-title: "A robust benchmark for germline structural variant detection"
-authors: Zook JM, Hansen NF, Olson ND, Chapman LM, Mullikin JC, Xiao C, Sherry S, Koren S, Phillippy AM, Boutros PC, Sahraeian SME, Huang V, Rouette A, Alexander N, Mason CC, Hajirasouliha IC, Ricketts CC, Lee J, Tearle R, Fiddes IT, Barrio AM, Wala J, Carroll A, Ghaffari N, Rodriguez OL, Bashir A, Jackman S, Farrell JJ, Wenger AM, Alkan C, Soylev A, Schatz MC, Garg S, Church G, Marschall T, Chen K, Fan X, English AC, Rosenfeld JD, Zhou W, Mills RE, Sage JM, Davis JR, Kaiser MD, Oliver JS, Catalano AP, Spies N, Chaisson MJP, Sedlazeck FJ, Salit M, Genome in a Bottle Consortium
-text: https://doi.org/10.1101/664623
-date: "2019-07-18"
-journal: bioRxiv
-pubmed: 
+title: "A robust benchmark for detection of germline large deletions and insertions"
+authors: Zook JM, Hansen NF, Olson ND, Chapman LM, Mullikin JC, Xiao C, Sherry S, Koren S, Phillippy AM, Boutros PC, Sahraeian SME, Huang V, Rouette A, Alexander N, Mason CE, Hajirasouliha IC, Ricketts CC, Lee J, Tearle R, Fiddes IT, Barrio AM, Wala J, Carroll A, Ghaffari N, Rodriguez OL, Bashir A, Jackman S, Farrell JJ, Wenger AM, Alkan C, Soylev A, Schatz MC, Garg S, Church G, Marschall T, Chen K, Fan X, English AC, Rosenfeld JD, Zhou W, Mills RE, Sage JM, Davis JR, Kaiser MD, Oliver JS, Catalano AP, Chaisson MJP, Spies N, Sedlazeck FJ, Salit M
+text: https://doi.org/10.1038/s41587-020-0538-8
+date: "2020-06-15"
+journal: Nature Biotechnology
+pubmed: 32541955
