@@ -28,40 +28,6 @@ permalink: /
 </div>
 {% endif %}
 
-{% if site.data.publications %}
-{% assign array = "" | split: "" %}
-{% for pair in site.data.publications %}
-	{% assign array = array | push: pair[1] %}
-{% endfor %}
-{% assign sorted = array | sort: "date" | reverse %}
-{% assign count = site.data.publications.size %}
-<div class="section">
-{% include title-bar.html title="Publications" %}
-{% include see-all.html name="publications" link="publications" count=count %}
-{% for pub in sorted limit: site.data.settings.landing-pubs %}
-	{% include publication.html pub=pub %}
-{% endfor %}
-</div>
-{% endif %}
-
-{% if site.data.settings.landing-software %}
-  {% assign count = site.projects.size %}
-  <div class="section">
-  {% include title-bar.html title="Software" %}
-  {% include see-all.html name="projects" link="projects" count=count %}
-  {% for query in site.data.settings.landing-software %}
-            {% for proj in site.projects %}
-              {% unless proj.retired %}
-                {% assign key = proj.title | downcase %}
-		{% if key == query %}
-	    	{% include project.html proj=proj %}
-		{% endif %}
-	      {% endunless %}
-	    {% endfor %}
-  {% endfor %}
-</div>
-{% endif %}
-
 {% if site.posts.size > 0 %}
 {% assign post = site.posts.first %}
 {% assign count = site.posts.size %}
@@ -94,8 +60,41 @@ permalink: /
 			<a href="{{ site.baseurl }}{{ post.url }}">{% include post-link-more.html %}</a>
       </div>
       {% endif %}
-
 </div>
 {% endfor %}
+</div>
+{% endif %}
+
+{% if site.data.publications %}
+{% assign array = "" | split: "" %}
+{% for pair in site.data.publications %}
+	{% assign array = array | push: pair[1] %}
+{% endfor %}
+{% assign sorted = array | sort: "date" | reverse %}
+{% assign count = site.data.publications.size %}
+<div class="section">
+{% include title-bar.html title="Publications" %}
+{% include see-all.html name="publications" link="publications" count=count %}
+{% for pub in sorted limit: site.data.settings.landing-pubs %}
+	{% include publication.html pub=pub %}
+{% endfor %}
+</div>
+{% endif %}
+
+{% if site.data.settings.landing-software %}
+  {% assign count = site.projects.size %}
+  <div class="section">
+  {% include title-bar.html title="Software" %}
+  {% include see-all.html name="projects" link="projects" count=count %}
+  {% for query in site.data.settings.landing-software %}
+            {% for proj in site.projects %}
+              {% unless proj.retired %}
+                {% assign key = proj.title | downcase %}
+		{% if key == query %}
+	    	{% include project.html proj=proj %}
+		{% endif %}
+	      {% endunless %}
+	    {% endfor %}
+  {% endfor %}
 </div>
 {% endif %}
