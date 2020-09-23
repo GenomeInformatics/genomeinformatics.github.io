@@ -8,7 +8,7 @@ email: adam.phillippy@nih.gov
 homepage: https://irp.nih.gov/pi/adam-phillippy
 scholar: https://scholar.google.com/citations?user=PTTAqsgAAAAJ
 twitter: https://twitter.com/aphillippy
-role: Investigator
+role: Senior Investigator
 institutes:
 - nih
 portrait: /img/phillippy.jpg

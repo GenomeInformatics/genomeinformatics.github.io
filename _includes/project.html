@@ -1,19 +1,6 @@
 {% assign proj = include.proj %}
 
 <div>
-{% if include.people %}
-      <div style="float:right;">
-        {% include person-list-start.html %}
-        {% for person in site.people %}
-          {% assign key = person.title | downcase %}
-          {% if proj.people contains key %}
-            {% include person-list-item.html index=forloop.index size=32 radius=4 inits="yes" %}
-          {% endif %}
-        {% endfor %}
-        {% include person-list-end.html %}
-      </div>
-{% endif %}
-
       <h3 style="margin-bottom:0;font-family: courier;{% if proj.retired %}color: #AAAAAA;{% endif %}">{{ proj.name }}</h3>
       <div class="postBody">
         {% if proj.retired %}

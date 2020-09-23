@@ -13,9 +13,6 @@ pubs: # cross-reference to _data/publications (no ".yml")
  - 2014-05-03-Koren
 
 people:
- - treangen
  - koren
- - sommer
- - pop
  - phillippy
 ---

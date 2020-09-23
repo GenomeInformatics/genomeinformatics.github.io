@@ -11,4 +11,5 @@ pubs:
 
 people:
  - dilthey
+ - phillippy
 ---

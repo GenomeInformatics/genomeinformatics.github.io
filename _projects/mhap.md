@@ -11,7 +11,6 @@ pubs:
  - 2015-05-25-Berlin
 
 people:
- - berlin
  - koren
  - phillippy
 ---
