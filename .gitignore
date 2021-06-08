@@ -2,6 +2,7 @@ _site
 .DS_Store
 .jekyll
 .jekyll-metadata
+.jekyll-cache
 .bundle
 .sass-cache
 Gemfile
@@ -11,3 +12,4 @@ package.json
 restart-jekyll.sh
 notes.txt
 schema.pdf
+~$schema.pptx
