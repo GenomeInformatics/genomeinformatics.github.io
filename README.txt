@@ -4,6 +4,7 @@ Building locally
 Install the jekyll Ruby module(s):
 
  [ >export GEM_HOME=~/.gem # if you don't have admin rights ]
+ [ >export PATH=$PATH:~/.gem/bin # if you don't have admin rights ]
    >gem install jekyll
    >gem install jekyll-paginate # for multipage blog listings
    >gem install jekyll-feed # for Atom (RSS-like) feed
