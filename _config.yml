@@ -151,3 +151,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - README.txt
