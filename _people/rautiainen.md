@@ -1,7 +1,7 @@
 ---
 name: Mikko Rautiainen
 pub-names:
- - Rautiainen, M
+ - Rautiainen M
 degree: PhD
 twitter: https://twitter.com/MikkoRautiaine3
 role: Postdoctoral Fellow
