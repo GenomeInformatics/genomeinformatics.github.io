@@ -12,10 +12,11 @@ institutes:
  - nih
  - umd
 portrait: /img/ondov.jpeg
+alum: true
 bio:
- Brian Ondov studied computer science at RPI and bioinformatics at Georgia Tech.
- He now specializes in visualization and high performance algorithms, and has
- been the principal engineer of Krona, Gingr and Mash. As of fall 2017 he is a
- computer science PhD student at the University of Maryland and a pre-doctoral
- IRTA with the Genome Informatics Section.
+ Brian Ondov completed his PhD in the Phillippy lab under the NIH Graduate
+ Partnership Program, earning the degree from the University of Maryland under
+ the advisement of Niklas Elmqvist. He has worked on Krona, Mash, and Harvest,
+ and is now a Postdoc under Dina Demner-Fushman at the National Library of
+ Medicine.
 ---
