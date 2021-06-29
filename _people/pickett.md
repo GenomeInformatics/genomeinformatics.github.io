@@ -4,7 +4,7 @@ pub-names:
  - Pickett BD
  - Pickett B
 degree: PhD
-email: brandon.pickett@nih.gov
+email: pickettbd@nih.gov
 scholar: https://scholar.google.com/citations?user=-dnx7soAAAAJ
 twitter: https://twitter.com/pickettbd
 role: Postdoctoral Fellow
