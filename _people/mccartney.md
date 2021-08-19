@@ -1,8 +1,8 @@
 ---
 name: Ann Mc Cartney
 pub-names:
- - McCartney, AM
- - Mc Cartney, AM
+ - McCartney AM
+ - Mc Cartney AM
 degree: PhD
 email: ann.mccartney@nih.gov
 twitter: https://twitter.com/CartneyAnn
