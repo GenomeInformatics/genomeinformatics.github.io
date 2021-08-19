@@ -5,6 +5,7 @@ home: http://marbl.github.io/metAMOS/
 docs: http://metamos.readthedocs.io/en/v1.5rc3/
 source: https://github.com/marbl/metAMOS
 download: https://github.com/marbl/metAMOS/releases
+retired: y
 desc:
  A metagenomic and isolate assembly and analysis pipeline
 
