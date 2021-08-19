@@ -4,7 +4,6 @@ pub-names:
  - Ghurye J
 degree: PhD
 email: jayg@cs.umd.edu
-homepage: http://cbcb.umd.edu/~jayg/
 scholar: https://scholar.google.com/citations?user=ZMIwuioAAAAJ
 twitter: https://twitter.com/jayghurye
 role: Graduate Student
