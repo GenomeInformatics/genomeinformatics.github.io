@@ -9,6 +9,6 @@ institutes:
  - nih
  - princeton
 portrait: /img/kostic.jpg
-bio: Aleks is a former summer fellow in the Genome Informatics Section who worked on novel virus discovery using Mash. She is currently a student at Princeton studying computer science.
+bio: Aleks is a former undergraduate at Princeton University and summer fellow in the Genome Informatics Section who worked on novel virus discovery using Mash. She is currently a research assistant at Brigham and Women's Hospital.
 alum: true
 ---

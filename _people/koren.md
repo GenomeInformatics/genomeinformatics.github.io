@@ -7,7 +7,7 @@ email: sergey.koren@nih.gov
 homepage: https://sites.google.com/site/sergekoren/
 scholar: https://scholar.google.com/citations?user=QQBHMyAAAAAJ
 twitter: https://twitter.com/sergekoren
-role: Staff Scientist
+role: Associate Investigator
 institutes:
 - nih
 portrait: /img/koren.jpg

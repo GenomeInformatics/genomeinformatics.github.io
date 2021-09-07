@@ -9,6 +9,6 @@ institutes:
  - nih
  - mit
 portrait: /img/sappington.jpg
-bio: Anna is a former summer fellow and special volunteer in the Genome Informatics Section who worked on protein sequence search and comparison using MinHash. She is currently a student at MIT studying computer science and molecular biology.
+bio: Anna is a former undergraduate at MIT and summer fellow and special volunteer in the Genome Informatics Section who worked on protein sequence search and comparison using MinHash. She is currently an MD-PhD candidate at Harvard Medical School.
 alum: true
 ---
