@@ -1,6 +1,6 @@
-title: "False gene and chromosome losses affected by assembly and sequence errors"
-authors: Kim J, Lee C, Ko BJ, Yoo D, Won S, Phillippy A, Fedrigo O, Zhang G, Howe K, Wood J, Durbin R, Formenti G, Brown S, Cantin L, Mello CV, Cho S, Rhie A, Kim H, Jarvis ED
-text: https://doi.org/10.1101/2021.04.09.438906
-date: "2021-04-09"
-journal: bioRxiv
-pubmed: 
+title: "False gene and chromosome losses in genome assemblies caused by GC content variation and repeats"
+authors: Kim J, Lee C, Ko BJ, Yoo DA, Won S, Phillippy AM, Fedrigo O, Zhang G, Howe K, Wood J, Durbin R, Formenti G, Brown S, Cantin L, Mello CV, Cho S, Rhie A, Kim H, Jarvis ED
+text: https://doi.org/10.1186/s13059-022-02765-0
+date: "2022-09-27"
+journal: Genome Biology
+pubmed: 36167554
