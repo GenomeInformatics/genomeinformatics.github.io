@@ -8,7 +8,8 @@ title: People
 {% assign alums=false %}
 
 <div class="posts">
-	{% for person in site.people %}
+	{% assign sortedpeople = site.people | sort: "display_order" %}
+	{% for person in sortedpeople %}
 		{% if person.alum %}
 			{% assign alums=true %}
 		{% else %}
@@ -21,7 +22,8 @@ title: People
 <h1 class="page-name" style="margin-top:50px;">Alumni</h1>
 
 <div class="posts">
-	{% for person in site.people %}
+	{% assign sortedpeople = site.people | sort: "display_order" %}
+	{% for person in sortedpeople %}
 		{% if person.alum %}
 			{% include person-listing.html person=person %}
 		{% endif %}

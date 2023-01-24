@@ -13,10 +13,10 @@ title: News
 
       <div style="float:right;">
 		{% include person-list-start.html %}
-		{% for person in site.people %}
-			{% assign key = person.title | downcase %}
+		{% for p in site.people %}
+			{% assign key = p.title | downcase %}
 			{% if post.authors contains key %}
-				{% include person-list-item.html index=forloop.index size=40 inits='yes' %}
+				{% include person-list-item.html url=p.url portrait=p.portrait name=p.name size=40 inits='yes' %}
 			{% endif %}
 		{% endfor %}
 		{% include person-list-end.html %}

@@ -1,19 +1,23 @@
-{% assign radius=include.size %}
-{% assign person = site.people[include.index] %}
-{% if include.radius %}
-	{% assign radius = include.radius %}
-{% endif %}
+{% comment %}
+  Expects inputs:
+    url       = person.url
+    portrait  = person.portrait
+    name      = person.name
+    size      = portrait display size, in pixels
+    inits     = show first initials
+    showname  = show full name
+{% endcomment %}
+
 <li class="monogram" style="display: inline-block; margin: 0;">
-	<a href="{{ site.baseurl }}{{ person.url }}">
-	<div class="portrait-thumbnail" style="width: {{ include.size }}px; height: {{ include.size }}px; border-radius: {{ radius }}px; background-image:url({{ person.portrait }});"></div>
-	<!--<div style="width: 48px; height: 48px;"><img class="portrait-thumbnail" src="{{ person.portrait }}"/></div>-->
+	<a href="{{ site.baseurl }}{{ include.url }}">
+	<div class="portrait-thumbnail" style="width: {{ include.size }}px; height: {{ include.size }}px; border-radius: {{ include.size }}px; background-image:url({{ include.portrait }});"></div>
 	{% if include.inits == 'yes' %}
 		<div style="">
-			{% assign inits = person.name | split: " " %}
+			{% assign inits = include.name | split: " " %}
 			{% for init in inits %}{{ init | slice: 0 | upcase }}{% endfor %}
 		</div>
-	{% elsif include.name == 'yes' %}
-		<div style="line-height:1;">{{ person.name }}</div>
+	{% elsif include.showname == 'yes' %}
+		<div style="line-height:1;">{{ include.name }}</div>
 	{% endif %}
 	</a>
 </li>

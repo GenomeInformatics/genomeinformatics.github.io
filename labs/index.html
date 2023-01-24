@@ -17,9 +17,9 @@ layout: default
 			<div style="margin-top:10px;">
 			{% assign key = inst.title | downcase %}
 			{% include person-list-start.html %}
-			{% for person in site.people %}
-				{% if person.institutes contains key %}
-					{% include person-list-item.html index=forloop.index size=40 inits='yes' %}
+			{% for p in site.people %}
+				{% if p.institutes contains key %}
+					{% include person-list-item.html url=p.url portrait=p.portrait name=p.name size=40 inits='yes' %}
 				{% endif %}
 			{% endfor %}
 			{% include person-list-end.html %}

@@ -18,9 +18,10 @@ permalink: /
 <div class="see-all"><a href="{{ site.baseurl }}/people">see all members</a></div>
 <div style="text-align: center;margin-top:15px;">
 	{% include person-list-start.html %}
-	{% for person in site.people %}
-		{% unless person.alum %}
-			{% include person-list-item.html index=forloop.index size=60 inits="yes" %}
+	{% assign sortedpeople = site.people | sort: "display_order" %}
+	{% for p in sortedpeople %}
+		{% unless p.alum %}
+			{% include person-list-item.html url=p.url portrait=p.portrait name=p.name size=60 inits="yes" %}
 		{% endunless %}
 	{% endfor %}
 	{% include person-list-end.html %}
@@ -38,10 +39,10 @@ permalink: /
 <div class="post">
       <div style="float:right;">
 		{% include person-list-start.html %}
-		{% for person in site.people %}
-			{% assign key = person.title | downcase %}
+		{% for p in site.people %}
+			{% assign key = p.title | downcase %}
 			{% if post.authors contains key %}
-				{% include person-list-item.html index=forloop.index size=40 inits='yes' %}
+				{% include person-list-item.html url=p.url portrait=p.portrait name=p.name size=40 inits='yes' %}
 			{% endif %}
 		{% endfor %}
 		{% include person-list-end.html %}
