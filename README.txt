@@ -65,8 +65,9 @@ Editing/adding data
    _projects/*.md
    _data/publications/*.yml
 
-For People and Projects, file names will be used for sorting, and the prefixes
-for these and for Publications (no ".md" or ".yml") can be used as keys for
+For People, the "display_order" field in each person's file will be
+used for sorting and for Projects, the file name itself is used, and the prefixes
+for both of these and for Publications (no ".md" or ".yml") can be used as keys for
 cross-referencing in the YAML "front matter" (between the "---" lines). Though
 files for People and Projects are Markdown formatted, the data in their YAML
 front matter is used to generate their corresponding pages, and Markdown content
