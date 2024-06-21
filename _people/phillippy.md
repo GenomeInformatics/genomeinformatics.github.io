@@ -5,7 +5,7 @@ pub-names:
 - Phillippy A
 degree: PhD
 email: adam.phillippy@nih.gov
-homepage: https://irp.nih.gov/pi/adam-phillippy
+homepage: https://www.genome.gov/staff/Adam-M-Phillippy-PhD
 scholar: https://scholar.google.com/citations?user=PTTAqsgAAAAJ
 twitter: https://twitter.com/aphillippy
 role: Senior Investigator
