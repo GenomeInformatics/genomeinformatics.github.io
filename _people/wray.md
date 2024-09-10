@@ -1,7 +1,7 @@
 ---
 name: Valerie Wray
 email: wrayva@nih.gov
-role: Summer Fellow
+role: Special Volunteer
 institutes:
  - nih
  - umd
