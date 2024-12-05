@@ -7,7 +7,7 @@ degree: PhD
 email: adam.phillippy@nih.gov
 homepage: https://www.genome.gov/staff/Adam-M-Phillippy-PhD
 scholar: https://scholar.google.com/citations?user=PTTAqsgAAAAJ
-twitter: https://twitter.com/aphillippy
+bsky: https://bsky.app/profile/aphillippy.bsky.social
 role: Senior Investigator
 institutes:
 - nih
