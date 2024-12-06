@@ -6,6 +6,7 @@ pub-names:
 degree: PhD
 email: pickettbd@nih.gov
 scholar: https://scholar.google.com/citations?user=-dnx7soAAAAJ
+bsky: https://bsky.app/profile/pickettbd.bsky.social
 twitter: https://twitter.com/pickettbd
 role: Postdoctoral Fellow
 institutes:
