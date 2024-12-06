@@ -5,7 +5,7 @@ pub-names:
 - Sweeten AP
 email: alex.sweeten@nih.gov
 scholar: https://scholar.google.com/citations?hl=en&user=wH1dHEsAAAAJ
-twitter: https://twitter.com/alexsweeten
+bsky: https://bsky.app/profile/alexsweeten.bsky.social
 role: Predoctoral Fellow
 institutes:
  - nih
