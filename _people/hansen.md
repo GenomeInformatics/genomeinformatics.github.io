@@ -5,7 +5,7 @@ pub-names:
 degree: PhD
 email: nancy.hansen@nih.gov
 scholar: https://scholar.google.com/citations?hl=en&user=gNMtmvgAAAAJ
-twitter: https://twitter.com/nancyfhansen
+bsky: https://bsky.app/profile/nancyfhansen.bsky.social
 role: Staff Scientist
 institutes:
 - nih
