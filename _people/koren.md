@@ -6,7 +6,7 @@ degree: PhD
 email: sergey.koren@nih.gov
 homepage: https://sites.google.com/site/sergekoren/
 scholar: https://scholar.google.com/citations?user=QQBHMyAAAAAJ
-twitter: https://twitter.com/sergekoren
+bsky: https://bsky.app/profile/sergek.bsky.social
 role: Associate Investigator
 institutes:
 - nih
