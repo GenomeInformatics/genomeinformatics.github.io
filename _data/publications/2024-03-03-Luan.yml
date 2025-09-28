@@ -1,6 +1,6 @@
-title: "MetaCompass: Reference-guided assembly of metagenomes"
-authors: Luan T, Cepeda V, Liu B, Bowen Z, Ayyangar U, Almeida M, Hill CM, Koren S, Treangen TJ, Porter A, Pop M
-text: https://doi.org/10.48550/arXiv.2403.01578
-date: "2024-03-03"
-journal: ArXiv
-pubmed: 38903742
+title: "Reference-guided assembly of metagenomes with MetaCompass"
+authors: Luan T, Cepeda-Espinoza VP, Liu B, Bowen Z, Ayyangar U, Almeida M, Koren S, Treangen TJ, Porter A, Pop M
+text: https://doi.org/10.1016/j.crmeth.2025.101186
+date: "2025-09-26"
+journal: Cell Reports Methods
+pubmed: 41015028
