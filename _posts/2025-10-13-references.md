@@ -1,0 +1,17 @@
+---
+title: "Choose your reference wisely"
+authors:
+- phillippy
+---
+In honor of ASHG week, see ["Choose your human genome reference wisely"](https://www.nature.com/articles/s41592-025-02850-9)([no paywall](https://rdcu.be/eJejg)), in which Vivien Marx interviewed me on the state of the human reference genome. Vivien is always fun to chat with and I was in a slightly opinionated mood from the start — *“The idea of a single reference genome is outdated,” says NIH researcher Adam Phillippy.* Some of my other quotes follow with a little added context.
+
+<!--excerpt-->
+*“Conceptually, the pangenome represents all of humankind’s genetic information ... Population projects cannot sample each individual in the world, so the idea is to represent the population’s multitude.”* This cannot be done with singular references, so enter the [Human Pangenome Reference Consortium](https://humanpangenome.org/) (HPRC), where we are working to generate complete haplotypes for hundreds of individuals from around the world. The HPRC just released [version 2](https://humanpangenome.org/hprc-data-release-2/) of this growing resource in May 2025, representing near-complete diploid assemblies for >200 individuals.
+
+This resource is a big change from the single reference we have become accustomed to, and we are still coming to grips with how to best leverage it. People often ask when it will be time to “switch” to a pangenome reference or express hesitation about its complexity. *When [Phillippy] hears scientists say: “Oh, the pangenome is not for me,” he tells them, “You’re using it.” Illumina’s DRAGEN software already calls variants using graph genomes. Approaches related to graph genomes are, he says, “happening behind the scenes.”*
+
+This point is often lost. One enormous benefit of building a pangenome is that it improves our general understanding of natural human variation. It’s like the 1000 Genomes Project, but inclusive of ALL variation, not just the variants you can see with short-read variant calling. There is a lot more structural variation in a typical human genome than most people realize, even between the two haplotypes of a single person’s genome, that can have big effects but are rarely captured.
+
+By sampling the pangenome to build good priors on what a typical genome looks like, you can do a much better job of inferring a patient’s genome. *“Perhaps, in the future, scientists can depart from the approach of mapping sequencing reads ... and accessing data in the context of the reference ... I am suggesting we should flip that model, and we should map the metadata to the sequence of the patient, meaning we complete the patient’s genome, and then we take all of that metadata and we annotate it onto the personalized reference.”*
+
+Each genome is unique and should be treated as such. Analyzing the complete, personalized genome of an individual (yes, with the help of AI) will reduce reference bias and allow for the deep characterization of rare and novel structural variants that are the basis of many genetic diseases. The pangenome resources and genome inference approaches we are building will eventually enable complete, personalized “T2T” genomes for everyone. This is the thesis of “personalized genomes” as we recently described in the [Q100 project preprint](https://www.biorxiv.org/content/10.1101/2025.09.21.677443v1), and we plan to keep working towards this goal until it's a reality. Stay tuned!
