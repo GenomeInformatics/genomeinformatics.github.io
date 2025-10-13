@@ -2,9 +2,11 @@ landing-news-posts: 3
 landing-pubs: 3
 
 landing-software:
- - canu
+ - verkko
  - mash
  - krona
+ - merqury
+ - moddotplot
 
 person-page-posts: 4
 person-page-projects: 4
