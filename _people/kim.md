@@ -1,6 +1,7 @@
 ---
 name: Juhyun Kim
 pub-names:
+- Kim J
 - Juhyun K
 email: juhyun.kim2@nih.gov
 scholar: https://scholar.google.com/citations?user=q4KYkCoAAAAJ&hl=en

@@ -2,6 +2,7 @@
 name: Nancy Hansen
 pub-names:
 - Hansen NF
+- Hansen N
 degree: PhD
 email: nancy.hansen@nih.gov
 scholar: https://scholar.google.com/citations?hl=en&user=gNMtmvgAAAAJ
