@@ -1,14 +1,22 @@
 Building locally
 ----------------
+Confirm current GitHub Pages dependancies (and update versions below as needed):
+https://pages.github.com/versions.json
+
+Install Ruby:
+   brew install rbenv ruby-build
+   rbenv init
+   rbenv install 3.3.4
+   rbenv global 3.3.4
+   ruby -v
 
 Install the jekyll Ruby module(s):
-
- [ >export GEM_HOME=~/.gem # if you don't have admin rights ]
- [ >export PATH=$PATH:~/.gem/bin # if you don't have admin rights ]
-   >gem install jekyll
-   >gem install jekyll-paginate # for multipage blog listings
-   >gem install jekyll-feed # for Atom (RSS-like) feed
-   >gem install jekyll-sitemap # for web crawlers
+ [ export GEM_HOME=~/.gem # if you don't have admin rights ]
+ [ export PATH=$PATH:~/.gem/bin # if you don't have admin rights ]
+   gem install jekyll -v 3.10.0
+   gem install jekyll-paginate -v 1.1.0
+   gem install jekyll-feed -v 0.17.0
+   gem install jekyll-sitemap -v 1.4.0
 
 Run jekyll in 'watch' mode to update as you modify files (restart if _config.yml
    changes):
