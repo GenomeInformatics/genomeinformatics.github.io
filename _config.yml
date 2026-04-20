@@ -81,12 +81,12 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: marbl
+  github:
   instagram:
   linkedin:
   pinterest:
   rss: yes # uncomment and put something here to enable
-  twitter: aphillippy
+  twitter: #
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
@@ -117,7 +117,7 @@ baseurl: ""
 permalink: /:title/
 
 # The release of Jekyll Now that you're using
-version: v1.2.0
+version: v3.10.0
 
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:

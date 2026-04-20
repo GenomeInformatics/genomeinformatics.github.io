@@ -3,7 +3,7 @@ title: "Choose your reference wisely"
 authors:
 - phillippy
 ---
-In honor of ASHG week, see ["Choose your human genome reference wisely"](https://www.nature.com/articles/s41592-025-02850-9)([no paywall](https://rdcu.be/eJejg)), in which Vivien Marx interviewed me on the state of the human reference genome. Vivien is always fun to chat with and I was in a slightly opinionated mood from the start — *“The idea of a single reference genome is outdated,” says NIH researcher Adam Phillippy.* Some of my other quotes follow with a little added context.
+In honor of ASHG week, see ["Choose your human genome reference wisely"](https://www.nature.com/articles/s41592-025-02850-9) ([no paywall](https://rdcu.be/eJejg)), in which Vivien Marx interviewed me on the state of the human reference genome. Vivien is always fun to chat with and I was in a slightly opinionated mood from the start — *“The idea of a single reference genome is outdated,” says NIH researcher Adam Phillippy.* Some of my other quotes follow with a little added context.
 
 <!--excerpt-->
 *“Conceptually, the pangenome represents all of humankind’s genetic information ... Population projects cannot sample each individual in the world, so the idea is to represent the population’s multitude.”* This cannot be done with singular references, so enter the [Human Pangenome Reference Consortium](https://humanpangenome.org/) (HPRC), where we are working to generate complete haplotypes for hundreds of individuals from around the world. The HPRC just released [version 2](https://humanpangenome.org/hprc-data-release-2/) of this growing resource in May 2025, representing near-complete diploid assemblies for >200 individuals.
