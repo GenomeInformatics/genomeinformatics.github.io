@@ -5,7 +5,7 @@ pub-names:
 - Phillippy A
 degree: PhD
 email: aphillippy@jhu.edu
-homepage: https://www.genome.gov/staff/Adam-M-Phillippy-PhD
+homepage: https://engineering.jhu.edu/faculty/adam-phillippy/
 scholar: https://scholar.google.com/citations?user=PTTAqsgAAAAJ
 bsky: https://bsky.app/profile/aphillippy.bsky.social
 role: Professor
