@@ -9,6 +9,7 @@ desc:
 
 pubs: # cross-reference to _data/publications (no ".yml")
  - 2022-06-27-Rautiainen
+ - 2024-12-22-Antipov
 
 people:
  - rautiainen 
