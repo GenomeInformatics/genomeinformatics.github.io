@@ -1,6 +1,6 @@
 ---
 name: Verkko
-date: "2022-06-27"
+date: "2027-06-27"
 home: https://github.com/marbl/verkko/blob/master/README.md
 source: https://github.com/marbl/verkko
 download: https://github.com/marbl/verkko/releases
