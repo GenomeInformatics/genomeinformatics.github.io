@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' ws://127.0.0.1:* ws://localhost:*; object-src 'none'; base-uri 'none'" />
+    <meta
+      name="description"
+      content="Private, browser-native interactive genomic dotplots"
+    />
+    <link rel="icon" href="/moddotplot-rs/favicon.svg" type="image/svg+xml" />
+    <title>moddotplot-rs</title>
+    <script type="module" crossorigin src="/moddotplot-rs/assets/index-N6a1SsjN.js"></script>
+    <link rel="stylesheet" crossorigin href="/moddotplot-rs/assets/index-DOL7rEeW.css">
+  </head>
+  <body>
+    <main id="app">
+      <section id="landing" class="landing" aria-labelledby="drop-title">
+        <div class="landing-content">
+          <h1>moddotplot-rs</h1>
+          <div class="drop-zone-frame">
+            <button id="drop-zone" class="drop-zone" type="button">
+              <span id="drop-title" class="drop-title">Drop FASTA files here</span>
+              <span class="drop-detail">or click to choose files · FASTA, gzip, and BGZF · ok for human-sized genomes</span>
+              <span class="caveat-note">100% vibe-coded with Codex, provided &quot;as is&quot;</span>
+              <span class="privacy-note">Your sequence never leaves this browser</span>
+            </button>
+            <span id="landing-version" class="app-version landing-version"></span>
+          </div>
+        </div>
+        <input id="file-input" type="file" accept=".fa,.fasta,.fna,.fas,.fa.gz,.fasta.gz,.fna.gz,.gz,.bgz,.bgzf" multiple hidden />
+      </section>
+
+      <section id="workspace" class="workspace" hidden>
+        <aside class="controls" aria-label="Plot controls">
+          <div class="control-header">
+            <h1>moddotplot-rs</h1>
+            <button id="clear-button" class="quiet-button" type="button">Clear</button>
+          </div>
+          <div class="control-status">
+            <div class="status-cluster">
+              <div id="status" class="status" role="status">Preparing browser compute engine…</div>
+              <button id="retry-engine" class="status-action" type="button" hidden>Restart engine</button>
+            </div>
+            <div id="compute-progress" class="compute-progress" hidden>
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <circle class="progress-track" cx="10" cy="10" r="8"></circle>
+                <circle id="progress-ring" class="progress-ring" cx="10" cy="10" r="8"></circle>
+              </svg>
+              <strong id="progress-value"></strong>
+            </div>
+          </div>
+          <label>
+            <span>X sequence</span>
+            <select id="x-sequence"></select>
+          </label>
+          <label>
+            <span>Y sequence</span>
+            <select id="y-sequence"></select>
+          </label>
+
+          <fieldset class="segmented-control">
+            <legend>Color</legend>
+            <button type="button" data-color-mode="similarity" aria-pressed="true">Similarity</button>
+            <button type="button" data-color-mode="direction" aria-pressed="false">Direction</button>
+          </fieldset>
+
+          <fieldset class="segmented-control">
+            <legend>Background</legend>
+            <button type="button" data-background-mode="white" aria-pressed="true">White</button>
+            <button type="button" data-background-mode="black" aria-pressed="false">Black</button>
+          </fieldset>
+
+          <div class="heatmap-control">
+            <span class="control-title">Identity colors</span>
+            <label>
+              <span>Palette</span>
+              <select id="heatmap-palette">
+                <option value="sunset" selected>Sunset</option>
+                <option value="spectral">Spectral</option>
+                <option value="viridis">Viridis</option>
+                <option value="blueRed">Blue–red</option>
+              </select>
+            </label>
+            <canvas id="identity-histogram" width="220" height="28" aria-hidden="true"></canvas>
+            <div id="heatmap-gradient" class="triple-slider" aria-label="Identity color range">
+              <input id="heatmap-min" aria-label="Minimum identity" type="range" min="80" max="100" value="85" step="0.1" />
+              <input id="heatmap-mid" aria-label="Middle identity" type="range" min="80" max="100" value="92" step="0.1" />
+              <input id="heatmap-max" aria-label="Maximum identity" type="range" min="80" max="100" value="100" step="0.1" />
+            </div>
+            <div class="heatmap-values">
+              <span>min <output id="heatmap-min-value">85.0%</output></span>
+              <span>mid <output id="heatmap-mid-value">92.0%</output></span>
+              <span>max <output id="heatmap-max-value">100.0%</output></span>
+            </div>
+          </div>
+          <details class="feature-track-controls">
+            <summary>Feature tracks</summary>
+            <div class="feature-track-control-item">
+              <div class="feature-track-control-row" role="group" aria-label="GC percent tracks">
+                <strong>GC%</strong>
+                <label><span>X</span><input id="gc-track-x" type="checkbox" /></label>
+                <label><span>Y</span><input id="gc-track-y" type="checkbox" /></label>
+                <label><span>Both</span><input id="gc-track-both" type="checkbox" /></label>
+              </div>
+              <small>Average GC% for each visible genomic window. Computed locally on demand.</small>
+            </div>
+            <div class="feature-track-control-item">
+              <div class="feature-track-control-row" role="group" aria-label="CpG observed expected tracks">
+                <strong>CpG O/E</strong>
+                <label><span>X</span><input id="cpg-track-x" type="checkbox" /></label>
+                <label><span>Y</span><input id="cpg-track-y" type="checkbox" /></label>
+                <label><span>Both</span><input id="cpg-track-both" type="checkbox" /></label>
+              </div>
+              <small>Observed/expected CpG ratio per window, displayed on a 0–2 scale.</small>
+            </div>
+            <div id="imported-track-list" class="imported-track-list">
+              <small id="imported-track-empty">No imported tracks</small>
+            </div>
+            <div class="feature-track-control-item feature-track-add-control">
+              <button id="add-track" class="add-track-button" type="button">Add track</button>
+              <small>Drop BED, GFF3, or GTF files, including gzip/BGZF files, directly on an axis, or let Add track assign one.</small>
+            </div>
+            <input id="track-file-input" type="file" accept=".bed,.gff,.gff3,.gtf,.gff2,.bed.gz,.gff.gz,.gff3.gz,.gtf.gz,.gff2.gz,.bed.bgz,.gff.bgz,.gff3.bgz,.gtf.bgz,.gff2.bgz,.bgzf" multiple hidden />
+          </details>
+
+          <details class="advanced-controls">
+            <summary>Advanced options</summary>
+            <label>
+              <span>Plot detail</span>
+              <select id="resolution">
+                <option value="500">Preview · 500 × 500 cells</option>
+                <option value="1000" selected>Standard · 1,000 × 1,000 cells</option>
+                <option value="2000">High · 2,000 × 2,000 cells</option>
+                <option value="4000">Ultra · 4,000 × 4,000 cells</option>
+              </select>
+              <small id="plot-detail-note">1,000,000 similarity cells before zoom refinement</small>
+            </label>
+            <label>
+              <span>Quick-view accuracy</span>
+              <select id="preview-register-count">
+                <option value="128">Very fast · 128 registers</option>
+                <option value="256" selected>Fast · 256 registers</option>
+                <option value="512">Higher · 512 registers</option>
+                <option value="1024">Maximum · 1,024 registers</option>
+              </select>
+              <small>Displayed first whenever a new plot level is requested</small>
+            </label>
+            <label>
+              <span>Detailed accuracy</span>
+              <select id="detailed-register-count">
+                <option value="512">Fast · 512 registers</option>
+                <option value="1024" selected>Balanced · 1,024 registers</option>
+                <option value="2048">High · 2,048 registers</option>
+                <option value="4096">Maximum · 4,096 registers</option>
+              </select>
+              <small id="sketch-retention-note">Estimated retained winners shown after sequence selection</small>
+            </label>
+            <label>
+              <span>K-mer length</span>
+              <input id="kmer-length" type="number" min="5" max="31" step="2" value="21" />
+            </label>
+            <output id="scientific-provenance" class="scientific-provenance" aria-live="polite">
+              Method details appear after a comparison is prepared.
+            </output>
+          </details>
+
+          <button id="reset-view" class="quiet-button" type="button">Reset view</button>
+          <div class="control-footer">
+            <div id="memory-usage" class="memory-usage" title="Estimated sequence, cache, JavaScript, and graphics memory">Memory —</div>
+            <span id="control-version" class="app-version control-version"></span>
+          </div>
+        </aside>
+
+        <section id="plot-column" class="plot-column">
+          <div id="plot-shell" class="plot-shell">
+            <div id="y-axis-panel" class="axis-panel axis-panel-y">
+              <canvas id="y-axis-overlay" aria-label="Y-axis coordinates"></canvas>
+            </div>
+            <div id="y-feature-track-stack" class="feature-track-stack feature-track-stack-y">
+              <div id="gc-track-y-panel" class="feature-track-panel feature-track-panel-y" hidden>
+                <span class="feature-track-name">GC%</span>
+                <canvas id="gc-track-y-canvas" aria-label="Y-axis GC percent track"></canvas>
+              </div>
+              <div id="cpg-track-y-panel" class="feature-track-panel feature-track-panel-y" hidden>
+                <span class="feature-track-name">CpG O/E</span>
+                <canvas id="cpg-track-y-canvas" aria-label="Y-axis CpG observed expected track"></canvas>
+              </div>
+            </div>
+            <div id="plot-frame" class="plot-frame">
+              <canvas id="plot-canvas" tabindex="0" aria-describedby="plot-summary" aria-label="Interactive genomic dotplot. Use arrow keys to pan, plus and minus to zoom, and Home to reset."></canvas>
+              <div id="plot-loading" class="plot-loading" role="status" aria-label="Drawing plot" hidden></div>
+              <p id="plot-summary" class="visually-hidden">No plot position selected.</p>
+              <div id="hover-card" class="hover-card" hidden></div>
+            </div>
+            <div id="y-sequence-label" class="sequence-label sequence-label-y"></div>
+            <div id="x-axis-panel" class="axis-panel axis-panel-x">
+              <canvas id="x-axis-overlay" aria-label="X-axis coordinates"></canvas>
+            </div>
+            <div id="x-feature-track-stack" class="feature-track-stack feature-track-stack-x">
+              <div id="gc-track-x-panel" class="feature-track-panel feature-track-panel-x" hidden>
+                <span class="feature-track-name">GC%</span>
+                <canvas id="gc-track-x-canvas" aria-label="X-axis GC percent track"></canvas>
+              </div>
+              <div id="cpg-track-x-panel" class="feature-track-panel feature-track-panel-x" hidden>
+                <span class="feature-track-name">CpG O/E</span>
+                <canvas id="cpg-track-x-canvas" aria-label="X-axis CpG observed expected track"></canvas>
+              </div>
+            </div>
+            <div id="x-sequence-label" class="sequence-label sequence-label-x"></div>
+            <div class="axis-corner" aria-hidden="true"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div id="track-hover-card" class="track-hover-card" hidden></div>
+    <dialog id="track-import-dialog" class="track-import-dialog" aria-labelledby="track-import-title">
+      <h2 id="track-import-title">Track import</h2>
+      <p id="track-import-summary"></p>
+      <ul id="track-import-details"></ul>
+      <div class="track-import-dialog-actions">
+        <button id="track-import-confirm" type="button" hidden>Import track</button>
+        <button id="track-import-secondary" type="button" hidden></button>
+        <button id="track-import-close" type="button">Close</button>
+      </div>
+    </dialog>
+    <dialog id="sequence-load-dialog" class="track-import-dialog" aria-labelledby="sequence-load-title">
+      <h2 id="sequence-load-title">FASTA not loaded</h2>
+      <p id="sequence-load-summary"></p>
+      <ul id="sequence-load-details"></ul>
+      <div class="track-import-dialog-actions">
+        <button id="sequence-load-close" type="button">Close</button>
+      </div>
+    </dialog>
+  </body>
+</html>
