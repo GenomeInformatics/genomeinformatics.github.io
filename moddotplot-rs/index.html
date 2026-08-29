@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Private, browser-native interactive genomic dotplots"
+    />
+    <link rel="icon" href="/moddotplot-rs/favicon.svg" type="image/svg+xml" />
+    <title>moddotplot-rs</title>
+    <script type="module" crossorigin src="/moddotplot-rs/assets/index-n3sPWSU5.js"></script>
+    <link rel="stylesheet" crossorigin href="/moddotplot-rs/assets/index-DUkeuy4R.css">
+  </head>
+  <body>
+    <main id="app">
+      <section id="landing" class="landing" aria-labelledby="drop-title">
+        <div class="landing-content">
+          <h1>moddotplot-rs</h1>
+          <button id="drop-zone" class="drop-zone" type="button">
+            <span id="drop-title" class="drop-title">Drop FASTA files here</span>
+            <span class="drop-detail">or choose files · FASTA and FASTA.gz · practical limit depends on browser memory</span>
+            <span class="privacy-note">Your sequence never leaves this browser.</span>
+          </button>
+        </div>
+        <input id="file-input" type="file" accept=".fa,.fasta,.fna,.fas,.fa.gz,.fasta.gz,.fna.gz,.gz" multiple hidden />
+      </section>
+
+      <section id="workspace" class="workspace" hidden>
+        <aside class="controls" aria-label="Plot controls">
+          <div class="control-header">
+            <h1>moddotplot-rs</h1>
+            <button id="clear-button" class="quiet-button" type="button">Clear</button>
+          </div>
+          <label>
+            <span>X sequence</span>
+            <select id="x-sequence"></select>
+          </label>
+          <label>
+            <span>Y sequence</span>
+            <select id="y-sequence"></select>
+          </label>
+
+          <fieldset class="segmented-control">
+            <legend>Color</legend>
+            <button type="button" data-color-mode="similarity" aria-pressed="true">Similarity</button>
+            <button type="button" data-color-mode="direction" aria-pressed="false">Direction</button>
+          </fieldset>
+
+          <div class="heatmap-control">
+            <span class="control-title">Identity colors</span>
+            <canvas id="identity-histogram" width="220" height="28" aria-hidden="true"></canvas>
+            <div class="triple-slider" aria-label="Identity color range">
+              <input id="heatmap-min" aria-label="Minimum identity" type="range" min="80" max="100" value="80" step="1" />
+              <input id="heatmap-mid" aria-label="Middle identity" type="range" min="80" max="100" value="90" step="1" />
+              <input id="heatmap-max" aria-label="Maximum identity" type="range" min="80" max="100" value="100" step="1" />
+            </div>
+            <div class="heatmap-values">
+              <span>min <output id="heatmap-min-value">80%</output></span>
+              <span>mid <output id="heatmap-mid-value">90%</output></span>
+              <span>max <output id="heatmap-max-value">100%</output></span>
+            </div>
+          </div>
+
+          <details>
+            <summary>Advanced options</summary>
+            <label>
+              <span>Plot detail</span>
+              <select id="resolution">
+                <option value="500">Preview · 500 × 500 cells</option>
+                <option value="1000" selected>Standard · 1,000 × 1,000 cells</option>
+                <option value="2000">High · 2,000 × 2,000 cells</option>
+                <option value="4000">Ultra · 4,000 × 4,000 cells</option>
+              </select>
+              <small id="plot-detail-note">1,000,000 similarity cells before zoom refinement</small>
+            </label>
+            <label>
+              <span>Quick-view accuracy</span>
+              <select id="preview-register-count">
+                <option value="128">Very fast · 128 registers</option>
+                <option value="256" selected>Fast · 256 registers</option>
+                <option value="512">Higher · 512 registers</option>
+                <option value="1024">Maximum · 1,024 registers</option>
+              </select>
+              <small>Displayed first whenever a new plot level is requested</small>
+            </label>
+            <label>
+              <span>Detailed accuracy</span>
+              <select id="detailed-register-count">
+                <option value="512">Fast · 512 registers</option>
+                <option value="1024">Balanced · 1,024 registers</option>
+                <option value="2048" selected>High · 2,048 registers</option>
+                <option value="4096">Maximum · 4,096 registers</option>
+              </select>
+              <small id="sketch-retention-note">Estimated retained winners shown after sequence selection</small>
+            </label>
+            <label>
+              <span>K-mer length</span>
+              <input id="kmer-length" type="number" min="5" max="31" step="2" value="21" />
+            </label>
+          </details>
+
+          <button id="reset-view" class="quiet-button" type="button">Reset view</button>
+        </aside>
+
+        <section class="plot-column">
+          <div class="status-row">
+            <div class="status-cluster">
+              <div id="status" class="status" role="status">Preparing browser compute engine…</div>
+              <div id="compute-progress" class="compute-progress" hidden>
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <circle class="progress-track" cx="10" cy="10" r="8"></circle>
+                  <circle id="progress-ring" class="progress-ring" cx="10" cy="10" r="8"></circle>
+                </svg>
+                <strong id="progress-value"></strong>
+              </div>
+            </div>
+            <div id="memory-usage" class="memory-usage" title="Estimated sequence, cache, JavaScript, and graphics memory">Memory —</div>
+          </div>
+          <div class="plot-shell">
+            <div class="axis-panel axis-panel-y">
+              <canvas id="y-axis-overlay" aria-label="Y-axis coordinates and feature tracks"></canvas>
+            </div>
+            <div id="plot-frame" class="plot-frame">
+              <canvas id="plot-canvas" aria-label="Interactive genomic dotplot"></canvas>
+              <div id="hover-card" class="hover-card" hidden></div>
+            </div>
+            <div class="axis-corner" aria-hidden="true"></div>
+            <div class="axis-panel axis-panel-x">
+              <canvas id="x-axis-overlay" aria-label="X-axis coordinates and feature tracks"></canvas>
+            </div>
+          </div>
+          <p class="axis-drop-hint">Drop BED, GFF3, or GTF annotations directly onto either axis.</p>
+        </section>
+      </section>
+      <input id="x-track-input" type="file" accept=".bed,.gff,.gff3,.gtf" hidden />
+      <input id="y-track-input" type="file" accept=".bed,.gff,.gff3,.gtf" hidden />
+    </main>
+  </body>
+</html>
