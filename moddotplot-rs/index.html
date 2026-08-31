@@ -10,8 +10,8 @@
     />
     <link rel="icon" href="/moddotplot-rs/favicon.svg" type="image/svg+xml" />
     <title>moddotplot-rs</title>
-    <script type="module" crossorigin src="/moddotplot-rs/assets/index-N6a1SsjN.js"></script>
-    <link rel="stylesheet" crossorigin href="/moddotplot-rs/assets/index-DOL7rEeW.css">
+    <script type="module" crossorigin src="/moddotplot-rs/assets/index-3MSp3VS4.js"></script>
+    <link rel="stylesheet" crossorigin href="/moddotplot-rs/assets/index-BCiE2f0r.css">
   </head>
   <body>
     <main id="app">
@@ -67,8 +67,8 @@
 
           <fieldset class="segmented-control">
             <legend>Background</legend>
-            <button type="button" data-background-mode="white" aria-pressed="true">White</button>
-            <button type="button" data-background-mode="black" aria-pressed="false">Black</button>
+            <button type="button" data-background-mode="white" aria-pressed="false">White</button>
+            <button type="button" data-background-mode="black" aria-pressed="true">Black</button>
           </fieldset>
 
           <div class="heatmap-control">
@@ -76,9 +76,9 @@
             <label>
               <span>Palette</span>
               <select id="heatmap-palette">
-                <option value="sunset" selected>Sunset</option>
+                <option value="sunset">Sunset</option>
                 <option value="spectral">Spectral</option>
-                <option value="viridis">Viridis</option>
+                <option value="viridis" selected>Viridis</option>
                 <option value="blueRed">Blue–red</option>
               </select>
             </label>
@@ -165,7 +165,11 @@
             </output>
           </details>
 
-          <button id="reset-view" class="quiet-button" type="button">Reset view</button>
+          <div class="plot-actions" role="group" aria-label="Plot actions">
+            <button id="reset-view" class="quiet-button" type="button">Reset view</button>
+            <button id="export-data" class="quiet-button" type="button" disabled>Export data</button>
+            <button id="export-image" class="quiet-button" type="button" disabled>Export image</button>
+          </div>
           <div class="control-footer">
             <div id="memory-usage" class="memory-usage" title="Estimated sequence, cache, JavaScript, and graphics memory">Memory —</div>
             <span id="control-version" class="app-version control-version"></span>
@@ -231,6 +235,11 @@
       <div class="track-import-dialog-actions">
         <button id="sequence-load-close" type="button">Close</button>
       </div>
+    </dialog>
+    <dialog id="export-progress-dialog" class="track-import-dialog export-progress-dialog" aria-labelledby="export-progress-title">
+      <h2 id="export-progress-title">Saving export</h2>
+      <p id="export-progress-message">Checking detailed tiles</p>
+      <progress id="export-progress-bar" max="1"></progress>
     </dialog>
   </body>
 </html>
