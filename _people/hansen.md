@@ -11,6 +11,6 @@ role: Senior Research Scientist
 institutes:
 - nih
 portrait: /img/hansen.jpg
-bio: When Nancy earned her PhD in physical chemistry from Stanford University in 1995, she modeled reactions of monatomic and diatomic molecules, but in 1996, she began to study DNA and she hasn't looked back since. Focusing on the detection and characterization of genomic variation in populations, Nancy has worked at the National Human Genome Research Institute since 2002. In 2022, she joined the Genome Informatics Section, where she currently works on polishing diploid assemblies to near perfection.
+bio: Nancy earned her Bachelor's degree at Princeton University, majoring in Chemistry, and then completed a PhD in physical chemistry at Stanford University. After many years working at the National Human Genome Research Institute, she joined the Computer Science department at Johns Hopkins University, where she will continue to work on diploid genome assembly and polishing.
 display_order: 199
 ---
