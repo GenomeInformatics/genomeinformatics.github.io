@@ -3,7 +3,7 @@ name: Juhyun Kim
 pub-names:
 - Kim J
 - Juhyun K
-email: juhyun.kim2@nih.gov
+email: juhyun.kim@jhu.edu
 scholar: https://scholar.google.com/citations?user=q4KYkCoAAAAJ&hl=en
 twitter: https://twitter.com/juhyunk_
 role: Postdoctoral Fellow
