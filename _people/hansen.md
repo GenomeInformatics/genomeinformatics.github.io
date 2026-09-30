@@ -5,7 +5,7 @@ pub-names:
 - Hansen N
 degree: PhD
 email: nancyhansen@jhu.edu
-scholar: https://scholar.google.com/citations?hl=en&user=gNMtmvgAAAAJ
+scholar: https://scholar.google.com/citations?hl=en&user=GMaskz4AAAAJ
 bsky: https://bsky.app/profile/nancyfhansen.bsky.social
 role: Senior Research Scientist
 institutes:
