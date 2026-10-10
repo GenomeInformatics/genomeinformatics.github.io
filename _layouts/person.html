@@ -38,6 +38,14 @@ layout: default
   <li><a href="{{ page.scholar }}">Scholar</a></li>
   {% endif %}
 
+  {% if page.orcid %}
+  <li><a href="https://orcid.org/my-orcid?orcid={{ page.orcid }}">ORCID</a></li>
+  {% endif %}
+
+  {% if page.github %}
+  <li><a href="https://github.com/{{ page.github }}">GitHub</a></li>
+  {% endif %}
+
   {% if page.twitter %}
   <li><a href="{{ page.twitter }}">Twitter</a></li>
   {% endif %}
