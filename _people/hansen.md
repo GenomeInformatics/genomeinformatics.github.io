@@ -11,6 +11,6 @@ role: Senior Research Scientist
 institutes:
 - nih
 portrait: /img/hansen.jpg
-bio: Nancy earned her Bachelor's degree at Princeton University, majoring in Chemistry, and then completed a PhD in physical chemistry at Stanford University. After many years working at the National Human Genome Research Institute, she joined the Computer Science department at Johns Hopkins University, where she will continue to work on diploid genome assembly and polishing.
+bio: Nancy earned her Bachelor's degree at Princeton University, majoring in Chemistry, and then completed a PhD in physical chemistry at Stanford University. In August, 2026, after many years working at the National Human Genome Research Institute, she joined the Computer Science department at Johns Hopkins University where she will continue to work on diploid genome assembly and polishing.
 display_order: 199
 ---
